@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://dkjdybo5k8thp"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_cqb6r"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="2_qiprm"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="3_ak4ds"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="4_qy41k"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="5_xrmxo"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d7e4g"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tgmr2"]
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.981519, 0)
+script = ExtResource("1_cqb6r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_d7e4g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_tgmr2")
+
+[node name="StateChart" type="Node" parent="."]
+script = ExtResource("2_qiprm")
+
+[node name="CompoundState" type="Node" parent="StateChart"]
+script = ExtResource("3_ak4ds")
+initial_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="StateChart/CompoundState"]
+script = ExtResource("4_qy41k")
+
+[node name="ToAir" type="Node" parent="StateChart/CompoundState/idle"]
+script = ExtResource("5_xrmxo")
+to = NodePath("../../in air")
+event = &"air"
+delay_in_seconds = "0.0"
+
+[node name="ToGrounded" type="Node" parent="StateChart/CompoundState/idle"]
+script = ExtResource("5_xrmxo")
+to = NodePath("../../grounded")
+event = &"ground"
+delay_in_seconds = "0.0"
+
+[node name="grounded" type="Node" parent="StateChart/CompoundState"]
+script = ExtResource("4_qy41k")
+
+[node name="ToAir" type="Node" parent="StateChart/CompoundState/grounded"]
+script = ExtResource("5_xrmxo")
+to = NodePath("../../in air")
+event = &"air"
+delay_in_seconds = "0.0"
+
+[node name="ToIdle" type="Node" parent="StateChart/CompoundState/grounded"]
+script = ExtResource("5_xrmxo")
+to = NodePath("../../idle")
+event = &"idle"
+delay_in_seconds = "0.0"
+
+[node name="in air" type="Node" parent="StateChart/CompoundState"]
+script = ExtResource("4_qy41k")
+
+[node name="ToGrounded" type="Node" parent="StateChart/CompoundState/in air"]
+script = ExtResource("5_xrmxo")
+to = NodePath("../../grounded")
+event = &"ground"
+delay_in_seconds = "0.0"
+
+[node name="ToIdle" type="Node" parent="StateChart/CompoundState/in air"]
+script = ExtResource("5_xrmxo")
+to = NodePath("../../idle")
+event = &"idle"
+delay_in_seconds = "0.0"
+
+[node name="CameraMount" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.612461, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraMount"]
+
+[connection signal="state_physics_processing" from="StateChart/CompoundState/idle" to="." method="_on_idle_state_physics_processing"]
+[connection signal="state_physics_processing" from="StateChart/CompoundState/grounded" to="." method="_on_grounded_state_physics_processing"]
+[connection signal="state_physics_processing" from="StateChart/CompoundState/in air" to="." method="_on_in_air_state_physics_processing"]
