@@ -1,0 +1,86 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddrlkqe6qxxgx"]
+
+[ext_resource type="Material" uid="uid://boarbfi3lhfxy" path="res://Materials/Bricks1.tres" id="1_qhh28"]
+
+[node name="TileOpen" type="CSGBox3D"]
+use_collision = true
+
+[node name="1_1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -7.5)
+size = Vector3(5, 5, 5)
+material = ExtResource("1_qhh28")
+
+[node name="1_2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -7.5)
+size = Vector3(5, 5, 5)
+material = ExtResource("1_qhh28")
+
+[node name="1_3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -7.5)
+size = Vector3(5, 5, 5)
+material = ExtResource("1_qhh28")
+
+[node name="1_4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -7.5)
+size = Vector3(5, 5, 5)
+material = ExtResource("1_qhh28")
+
+[node name="2_1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -2.5)
+size = Vector3(5, 5, 5)
+material = ExtResource("1_qhh28")
+
+[node name="2_2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 5, -2.5)
+size = Vector3(5, 15, 5)
+material = ExtResource("1_qhh28")
+
+[node name="2_3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 5, -2.5)
+size = Vector3(5, 15, 5)
+material = ExtResource("1_qhh28")
+
+[node name="2_4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -2.5)
+size = Vector3(5, 5, 5)
+material = ExtResource("1_qhh28")
+
+[node name="3_1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 2.5)
+size = Vector3(5, 5, 5)
+material = ExtResource("1_qhh28")
+
+[node name="3_2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 5, 2.5)
+size = Vector3(5, 15, 5)
+material = ExtResource("1_qhh28")
+
+[node name="3_3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 5, 2.5)
+size = Vector3(5, 15, 5)
+material = ExtResource("1_qhh28")
+
+[node name="3_4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 2.5)
+size = Vector3(5, 5, 5)
+material = ExtResource("1_qhh28")
+
+[node name="4_1" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 7.5)
+size = Vector3(5, 5, 5)
+material = ExtResource("1_qhh28")
+
+[node name="4_2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 7.5)
+size = Vector3(5, 5, 5)
+material = ExtResource("1_qhh28")
+
+[node name="4_3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 7.5)
+size = Vector3(5, 5, 5)
+material = ExtResource("1_qhh28")
+
+[node name="4_4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 7.5)
+size = Vector3(5, 5, 5)
+material = ExtResource("1_qhh28")

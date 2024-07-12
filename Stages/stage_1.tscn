@@ -1,0 +1,209 @@
+[gd_scene load_steps=14 format=3 uid="uid://b8qenoxcgqbc8"]
+
+[ext_resource type="PackedScene" uid="uid://b6kfirnbtp8up" path="res://Tiles/tile_open.tscn" id="1_fs6ii"]
+[ext_resource type="PackedScene" uid="uid://blev2ryfete84" path="res://Tiles/bar_open.tscn" id="2_4dbyl"]
+[ext_resource type="PackedScene" uid="uid://c1rnaf1cif6t8" path="res://Tiles/tile_jump.tscn" id="3_pnnr5"]
+[ext_resource type="PackedScene" uid="uid://cibgldjsbqsdl" path="res://Tiles/bar_wall.tscn" id="4_sepfg"]
+[ext_resource type="PackedScene" uid="uid://c245gqpcu1kf2" path="res://Tiles/tile_wall.tscn" id="5_6tyd8"]
+[ext_resource type="PackedScene" uid="uid://dkjdybo5k8thp" path="res://player.tscn" id="6_x1auc"]
+[ext_resource type="PackedScene" uid="uid://cmf467rx3fhva" path="res://Tiles/tile_tube_L.tscn" id="7_b4hta"]
+[ext_resource type="PackedScene" uid="uid://s1i2r2jp3tbw" path="res://Tiles/tile_tube_I.tscn" id="8_6nsjh"]
+[ext_resource type="PackedScene" uid="uid://bkmju0a02jjyv" path="res://Tiles/Doodad_Bumper.tscn" id="9_qremt"]
+[ext_resource type="PackedScene" uid="uid://dy7j8b1st03s8" path="res://Tiles/Doodad_Bumper_Pillar.tscn" id="10_ycej3"]
+[ext_resource type="PackedScene" uid="uid://xnrrmckaxkeg" path="res://Tiles/tile_stairs.tscn" id="11_7xpbi"]
+[ext_resource type="PackedScene" uid="uid://dlgt7mkioyjrn" path="res://Tiles/tile_lava.tscn" id="12_rmnht"]
+[ext_resource type="PackedScene" uid="uid://bs80u12f63cov" path="res://Tiles/Doodad_Corner_Bumper.tscn" id="13_1s31x"]
+
+[node name="Stage 1" type="Node3D"]
+
+[node name="TileOpen10" parent="." instance=ExtResource("1_fs6ii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="TileOpen12" parent="." instance=ExtResource("1_fs6ii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30)
+
+[node name="TileOpen4" parent="." instance=ExtResource("1_fs6ii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -20)
+
+[node name="TileOpen6" parent="." instance=ExtResource("1_fs6ii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -20)
+
+[node name="TileOpen11" parent="." instance=ExtResource("1_fs6ii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -20)
+
+[node name="BarOpen" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.5, -7.5)
+
+[node name="BarOpen2" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -12.5, 2.5, -20)
+
+[node name="BarOpen3" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.5, -32.5)
+
+[node name="BarOpen4" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 12.5, 2.5, -20)
+
+[node name="BarOpen5" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 12.5, 2.5, 5)
+
+[node name="BarOpen19" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-1, 8.74228e-08, 3.82138e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 2.5, 17.5)
+
+[node name="BarOpen6" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 25, 2.5, -7.5)
+
+[node name="BarOpen13" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91068e-15, 37.5, 2.5, -20)
+
+[node name="TileOpen13" parent="." instance=ExtResource("1_fs6ii")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -50, 0, -20)
+
+[node name="TileOpen14" parent="." instance=ExtResource("1_fs6ii")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -50, 0, 5)
+
+[node name="BarOpen20" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -37.5, 2.5, -20)
+
+[node name="BarOpen22" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -37.5, 2.5, 5)
+
+[node name="BarOpen21" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, -50, 2.5, -7.5)
+
+[node name="TileOpen16" parent="." instance=ExtResource("1_fs6ii")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -75, 0, -20)
+
+[node name="TileOpen20" parent="." instance=ExtResource("1_fs6ii")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -75, 0, -45)
+
+[node name="TileOpen21" parent="." instance=ExtResource("1_fs6ii")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -100, 0, -45)
+
+[node name="TileOpen22" parent="." instance=ExtResource("1_fs6ii")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -50, 0, -45)
+
+[node name="TileOpen18" parent="." instance=ExtResource("1_fs6ii")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -75, 0, 5)
+
+[node name="TileOpen19" parent="." instance=ExtResource("1_fs6ii")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -100, 0, 5)
+
+[node name="BarOpen24" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, -75, 2.5, -7.5)
+
+[node name="BarOpen26" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91068e-15, -62.5, 2.5, -20)
+
+[node name="BarOpen27" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91068e-15, -87.5, 2.5, -20)
+
+[node name="BarOpen28" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91068e-15, -87.5, 2.5, 5)
+
+[node name="BarOpen29" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91068e-15, -62.5, 2.5, 5)
+
+[node name="TileOpen17" parent="." instance=ExtResource("1_fs6ii")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -100, 0, -20)
+
+[node name="BarOpen25" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, -100, 2.5, -7.5)
+
+[node name="BarOpen7" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 25, 2.5, -32.5)
+
+[node name="BarOpen8" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, -25, 2.5, -32.5)
+
+[node name="BarOpen14" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, -50, 2.5, -32.5)
+
+[node name="BarOpen30" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, -75, 2.5, -32.5)
+
+[node name="BarOpen31" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, -100, 2.5, -32.5)
+
+[node name="BarOpen32" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(1.31134e-07, 1, 3.55271e-15, -4.37114e-08, 0, 1, 1, -1.31134e-07, 4.37114e-08, -87.5, 2.5, -45)
+
+[node name="BarOpen33" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(1.31134e-07, 1, 3.55271e-15, -4.37114e-08, 0, 1, 1, -1.31134e-07, 4.37114e-08, -62.5, 2.5, -45)
+
+[node name="BarOpen9" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, -25, 2.5, -7.5)
+
+[node name="BarOpen10" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(1.31134e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, -1.31134e-07, -5.73206e-15, -12.5, 2.5, 5)
+
+[node name="BarOpen11" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(1.31134e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, -1.31134e-07, -5.73206e-15, -12.5, 2.5, -45)
+
+[node name="BarOpen12" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(1.31134e-07, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, -1.31134e-07, -5.73206e-15, 12.5, 2.5, -45)
+
+[node name="TileOpen" parent="." instance=ExtResource("3_pnnr5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+
+[node name="BarOpen17" parent="." instance=ExtResource("4_sepfg")]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -37.5, -2.5, -45)
+
+[node name="BarOpen18" parent="." instance=ExtResource("4_sepfg")]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 37.5, -2.5, -45)
+
+[node name="BarOpen15" parent="." instance=ExtResource("4_sepfg")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -25, -2.5, -57.5)
+
+[node name="BarOpen16" parent="." instance=ExtResource("4_sepfg")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 25, -2.5, -57.5)
+
+[node name="BarOpen23" parent="." instance=ExtResource("4_sepfg")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -2.5, -57.5)
+
+[node name="TileOpen5" parent="." instance=ExtResource("5_6tyd8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 5, -45)
+
+[node name="TileOpen15" parent="." instance=ExtResource("5_6tyd8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 5, -70)
+
+[node name="Player" parent="." instance=ExtResource("6_x1auc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.5, -5)
+
+[node name="TileOpen7" parent="." instance=ExtResource("7_b4hta")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25, 5, -45)
+
+[node name="TileOpen9" parent="." instance=ExtResource("7_b4hta")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 25, 5, 5)
+
+[node name="TileOpen2" parent="." instance=ExtResource("8_6nsjh")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25, 5, 5)
+
+[node name="Bumper" parent="." instance=ExtResource("9_qremt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.5, 0, 5)
+
+[node name="Bumper2" parent="." instance=ExtResource("9_qremt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -20)
+
+[node name="Bumper3" parent="." instance=ExtResource("9_qremt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.5, 0, -7.5)
+
+[node name="Bumper4" parent="." instance=ExtResource("10_ycej3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.5, 2.5, 5)
+
+[node name="Bumper5" parent="." instance=ExtResource("9_qremt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45)
+
+[node name="Bumper6" parent="." instance=ExtResource("10_ycej3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -45)
+
+[node name="TileOpen3" parent="." instance=ExtResource("11_7xpbi")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 20, -45)
+
+[node name="TileOpen8" parent="." instance=ExtResource("12_rmnht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45)
+
+[node name="CSGBox3D" parent="." instance=ExtResource("13_1s31x")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -87.6777, 10, -33.2843)
+
+[node name="CSGBox3D2" parent="." instance=ExtResource("13_1s31x")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -62.9289, 10, -33.2843)

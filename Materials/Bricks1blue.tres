@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://bbfdeyii33wcs"]
+
+[ext_resource type="Texture2D" uid="uid://b68cwxxr21r8y" path="res://Textures/Bricks/BrickWall (17)/BrickWall (17)_BaseColor.png" id="1_3ig0q"]
+[ext_resource type="Texture2D" uid="uid://bp4c1pfbdqj50" path="res://Textures/Bricks/BrickWall (17)/BrickWall (17)_AmbientOcclusion.png" id="2_xfw18"]
+[ext_resource type="Texture2D" uid="uid://csm2tn7blegv2" path="res://Textures/Bricks/BrickWall (17)/BrickWall (17)_Height.png" id="3_po45l"]
+[ext_resource type="Texture2D" uid="uid://bhg6tnbwl7wb7" path="res://Textures/Bricks/BrickWall (17)/BrickWall (17)_Normal.png" id="4_wnuv8"]
+[ext_resource type="Texture2D" uid="uid://7kmx5dhhad1a" path="res://Textures/Bricks/BrickWall (17)/BrickWall (17)_Roughness.png" id="5_uh3w6"]
+
+[resource]
+albedo_color = Color(2.21401e-06, 0.743097, 0.745493, 1)
+albedo_texture = ExtResource("1_3ig0q")
+roughness_texture = ExtResource("5_uh3w6")
+normal_enabled = true
+normal_texture = ExtResource("4_wnuv8")
+ao_enabled = true
+ao_texture = ExtResource("2_xfw18")
+heightmap_enabled = true
+heightmap_texture = ExtResource("3_po45l")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+uv1_world_triplanar = true

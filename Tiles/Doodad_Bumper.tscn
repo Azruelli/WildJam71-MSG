@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkmju0a02jjyv"]
+
+[ext_resource type="Texture2D" uid="uid://d4cdnygxy0vex" path="res://Textures/Unsorted/461223174.jpg" id="2_d6fsy"]
+[ext_resource type="Texture2D" uid="uid://llvlxftv5jkc" path="res://Textures/Unsorted/461223133.jpg" id="3_rafe6"]
+[ext_resource type="Texture2D" uid="uid://cbrs4io3tifp7" path="res://Textures/Unsorted/etched crystal texture.png" id="4_gkc3o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ijk8s"]
+albedo_texture = ExtResource("3_rafe6")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8w7sh"]
+albedo_texture = ExtResource("2_d6fsy")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4bf5f"]
+albedo_texture = ExtResource("4_gkc3o")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[node name="Bumper" type="CSGBox3D"]
+use_collision = true
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+radius = 2.5
+height = 4.0
+material = SubResource("StandardMaterial3D_ijk8s")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCylinder3D2"]
+operation = 2
+height = 6.0
+material = SubResource("StandardMaterial3D_8w7sh")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+radius = 2.0
+height = 5.0
+material = SubResource("StandardMaterial3D_4bf5f")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCylinder3D3"]
+operation = 2
+height = 6.0
+material = SubResource("StandardMaterial3D_8w7sh")

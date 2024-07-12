@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy7j8b1st03s8"]
+
+[ext_resource type="Texture2D" uid="uid://d4cdnygxy0vex" path="res://Textures/Unsorted/461223174.jpg" id="1_brxcn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8w7sh"]
+albedo_texture = ExtResource("1_brxcn")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[node name="Bumper" type="CSGBox3D"]
+use_collision = true
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.5, 0)
+height = 13.0
+material = SubResource("StandardMaterial3D_8w7sh")
