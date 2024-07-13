@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://4gc3g147otit"
+path="res://.godot/imported/bump-a.obj-fd23d884599cecec2f9ee4974b6a12e8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bump-a.obj-fd23d884599cecec2f9ee4974b6a12e8.mesh"]
+
+source_file="res://Models/Marble/bump-a.obj"
+dest_files=["res://.godot/imported/bump-a.obj-fd23d884599cecec2f9ee4974b6a12e8.mesh", "res://.godot/imported/bump-a.obj-fd23d884599cecec2f9ee4974b6a12e8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

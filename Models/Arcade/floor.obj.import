@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cykdrhstif30b"
+path="res://.godot/imported/floor.obj-8ae1953b35411701008df8aba8cf067c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/floor.obj-8ae1953b35411701008df8aba8cf067c.mesh"]
+
+source_file="res://Models/Arcade/floor.obj"
+dest_files=["res://.godot/imported/floor.obj-8ae1953b35411701008df8aba8cf067c.mesh", "res://.godot/imported/floor.obj-8ae1953b35411701008df8aba8cf067c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

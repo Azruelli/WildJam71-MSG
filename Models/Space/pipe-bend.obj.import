@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dryujrwh18rg1"
+path="res://.godot/imported/pipe-bend.obj-27053fa8a61f0b174d355a5e911bb8ff.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pipe-bend.obj-27053fa8a61f0b174d355a5e911bb8ff.mesh"]
+
+source_file="res://Models/Space/pipe-bend.obj"
+dest_files=["res://.godot/imported/pipe-bend.obj-27053fa8a61f0b174d355a5e911bb8ff.mesh", "res://.godot/imported/pipe-bend.obj-27053fa8a61f0b174d355a5e911bb8ff.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

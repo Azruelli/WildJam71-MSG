@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr45murgyvim4"]
+
+[ext_resource type="Texture2D" uid="uid://cb5p2ccftq1l1" path="res://Models/Arcade/Textures/colormap.png" id="1_opw8m"]
+[ext_resource type="ArrayMesh" uid="uid://bs1n4ulnhoyf3" path="res://Models/Arcade/gambling-machine.obj" id="2_7oaki"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_co7ns"]
+albedo_texture = ExtResource("1_opw8m")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k1wrp"]
+size = Vector3(1, 0.773865, 0.510498)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Gambling-machine" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_co7ns")
+mesh = ExtResource("2_7oaki")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gambling-machine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.363922, 0.0174561)
+shape = SubResource("BoxShape3D_k1wrp")

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bs1n4ulnhoyf3"
+path="res://.godot/imported/gambling-machine.obj-1fdcfefb7ea9a4112c63641e8d60aff3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/gambling-machine.obj-1fdcfefb7ea9a4112c63641e8d60aff3.mesh"]
+
+source_file="res://Models/Arcade/gambling-machine.obj"
+dest_files=["res://.godot/imported/gambling-machine.obj-1fdcfefb7ea9a4112c63641e8d60aff3.mesh", "res://.godot/imported/gambling-machine.obj-1fdcfefb7ea9a4112c63641e8d60aff3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b8mre04g6pr58"
+path="res://.godot/imported/fan-simple-two.obj-6ec1e962c127cac649b7c66ab600d706.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fan-simple-two.obj-6ec1e962c127cac649b7c66ab600d706.mesh"]
+
+source_file="res://Models/Marble/fan-simple-two.obj"
+dest_files=["res://.godot/imported/fan-simple-two.obj-6ec1e962c127cac649b7c66ab600d706.mesh", "res://.godot/imported/fan-simple-two.obj-6ec1e962c127cac649b7c66ab600d706.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

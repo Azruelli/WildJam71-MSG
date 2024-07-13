@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c4w6ctq2i41mt"
+path="res://.godot/imported/stairs-small-edge.obj-255ec7cf5388d0304d3a7d8f895b9c82.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stairs-small-edge.obj-255ec7cf5388d0304d3a7d8f895b9c82.mesh"]
+
+source_file="res://Models/Space/stairs-small-edge.obj"
+dest_files=["res://.godot/imported/stairs-small-edge.obj-255ec7cf5388d0304d3a7d8f895b9c82.mesh", "res://.godot/imported/stairs-small-edge.obj-255ec7cf5388d0304d3a7d8f895b9c82.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

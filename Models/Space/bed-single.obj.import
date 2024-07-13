@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dqesgj7t37y15"
+path="res://.godot/imported/bed-single.obj-e14c3ade34a09f66241c2d47e6a4ebdc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bed-single.obj-e14c3ade34a09f66241c2d47e6a4ebdc.mesh"]
+
+source_file="res://Models/Space/bed-single.obj"
+dest_files=["res://.godot/imported/bed-single.obj-e14c3ade34a09f66241c2d47e6a4ebdc.mesh", "res://.godot/imported/bed-single.obj-e14c3ade34a09f66241c2d47e6a4ebdc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

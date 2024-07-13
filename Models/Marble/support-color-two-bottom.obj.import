@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cqsvh3acrq87d"
+path="res://.godot/imported/support-color-two-bottom.obj-c4ce634887ec02d8d60d5850c47d5d61.mesh"
+
+[deps]
+
+files=["res://.godot/imported/support-color-two-bottom.obj-c4ce634887ec02d8d60d5850c47d5d61.mesh"]
+
+source_file="res://Models/Marble/support-color-two-bottom.obj"
+dest_files=["res://.godot/imported/support-color-two-bottom.obj-c4ce634887ec02d8d60d5850c47d5d61.mesh", "res://.godot/imported/support-color-two-bottom.obj-c4ce634887ec02d8d60d5850c47d5d61.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

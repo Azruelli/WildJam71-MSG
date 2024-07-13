@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://besjh2dh3qwig"
+path="res://.godot/imported/marble-high.obj-01dd3b5907a0ddb4125aad2c3232043a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/marble-high.obj-01dd3b5907a0ddb4125aad2c3232043a.mesh"]
+
+source_file="res://Models/Marble/marble-high.obj"
+dest_files=["res://.godot/imported/marble-high.obj-01dd3b5907a0ddb4125aad2c3232043a.mesh", "res://.godot/imported/marble-high.obj-01dd3b5907a0ddb4125aad2c3232043a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

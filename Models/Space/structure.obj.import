@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://jlu5po7hxcae"
+path="res://.godot/imported/structure.obj-92941d99312567255fb898d5ad9bd2df.mesh"
+
+[deps]
+
+files=["res://.godot/imported/structure.obj-92941d99312567255fb898d5ad9bd2df.mesh"]
+
+source_file="res://Models/Space/structure.obj"
+dest_files=["res://.godot/imported/structure.obj-92941d99312567255fb898d5ad9bd2df.mesh", "res://.godot/imported/structure.obj-92941d99312567255fb898d5ad9bd2df.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

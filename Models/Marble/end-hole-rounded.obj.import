@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bfs6xuhd5gsfn"
+path="res://.godot/imported/end-hole-rounded.obj-b40bf0516878fe9815ce222de017757d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/end-hole-rounded.obj-b40bf0516878fe9815ce222de017757d.mesh"]
+
+source_file="res://Models/Marble/end-hole-rounded.obj"
+dest_files=["res://.godot/imported/end-hole-rounded.obj-b40bf0516878fe9815ce222de017757d.mesh", "res://.godot/imported/end-hole-rounded.obj-b40bf0516878fe9815ce222de017757d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

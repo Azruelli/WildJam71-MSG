@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://coiordg1ndn4w"
+path="res://.godot/imported/support-color-single-middle.obj-4bee9d91f14f4ce5f9674ac7b30216ef.mesh"
+
+[deps]
+
+files=["res://.godot/imported/support-color-single-middle.obj-4bee9d91f14f4ce5f9674ac7b30216ef.mesh"]
+
+source_file="res://Models/Marble/support-color-single-middle.obj"
+dest_files=["res://.godot/imported/support-color-single-middle.obj-4bee9d91f14f4ce5f9674ac7b30216ef.mesh", "res://.godot/imported/support-color-single-middle.obj-4bee9d91f14f4ce5f9674ac7b30216ef.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
