@@ -1,6 +1,8 @@
 extends CharacterBody3D
 class_name Player
 
+var health = 100
+
 #Onready Variables
 @onready var state_chart: StateChart = $StateChart
 @onready var camera_mount: Node3D = $CameraMount
@@ -25,8 +27,8 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	move_and_slide()
 	handle_state()
-	restartandexit()
-	handle_camera_rotation()
+	debugcommands()
+	#handle_camera_rotation()
 	deltaSuper = get_physics_process_delta_time()
 
 func walking() -> void:
@@ -39,11 +41,13 @@ func walking() -> void:
 		velocity.x = move_toward(velocity.x, 0, player_speed * deltaSuper)
 		velocity.z = move_toward(velocity.z, 0, player_speed * deltaSuper)
 
-func restartandexit() -> void:
+func debugcommands() -> void:
 	if Input.is_action_just_pressed("ui_end"):
 		get_tree().reload_current_scene()
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
+	if Input.is_action_just_pressed("ui_home"):
+		health = 0
 
 func falling() -> void:
 	velocity.y -=  gravity * deltaSuper
@@ -53,6 +57,8 @@ func jumping() -> void:
 		velocity.y = jump_velocity
 
 func handle_state() -> void:
+	if health <= 0:
+		state_chart.send_event("die")
 	if not Input.is_anything_pressed() and is_on_floor():
 		state_chart.send_event("idle")
 	if is_on_floor() and Input.is_anything_pressed():
@@ -65,6 +71,7 @@ func _input(event: InputEvent) -> void:
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			mouse_motion = -event.relative * 0.001
 
+
 func handle_camera_rotation() -> void:
 	rotate_y(mouse_motion.x)
 	camera_mount.rotate_x(mouse_motion.y)
@@ -73,9 +80,10 @@ func handle_camera_rotation() -> void:
 	)
 	mouse_motion = Vector2.ZERO
 
+#State Entries called every frame on existing state, each one of these takes an input function on delta
+#which allows it to update outside of the main loop
 func _on_grounded_state_physics_processing(delta: float) -> void:
 	walking()
-	jumping()
 
 func _on_in_air_state_physics_processing(delta: float) -> void:
 	falling()
@@ -83,4 +91,6 @@ func _on_in_air_state_physics_processing(delta: float) -> void:
 func _on_idle_state_physics_processing(delta: float) -> void:
 	falling()
 	walking()
-#the
+
+func _on_die_state_physics_processing(delta: float) -> void:
+	falling()

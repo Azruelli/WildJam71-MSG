@@ -10,7 +10,7 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tgmr2"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["phys_react"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.981519, 0)
 script = ExtResource("1_cqb6r")
 
@@ -42,6 +42,12 @@ to = NodePath("../../grounded")
 event = &"ground"
 delay_in_seconds = "0.0"
 
+[node name="Death" type="Node" parent="StateChart/CompoundState/idle"]
+script = ExtResource("5_xrmxo")
+to = NodePath("../../Die")
+event = &"die"
+delay_in_seconds = "0.0"
+
 [node name="grounded" type="Node" parent="StateChart/CompoundState"]
 script = ExtResource("4_qy41k")
 
@@ -55,6 +61,12 @@ delay_in_seconds = "0.0"
 script = ExtResource("5_xrmxo")
 to = NodePath("../../idle")
 event = &"idle"
+delay_in_seconds = "0.0"
+
+[node name="Death" type="Node" parent="StateChart/CompoundState/grounded"]
+script = ExtResource("5_xrmxo")
+to = NodePath("../../Die")
+event = &"die"
 delay_in_seconds = "0.0"
 
 [node name="in air" type="Node" parent="StateChart/CompoundState"]
@@ -72,11 +84,22 @@ to = NodePath("../../idle")
 event = &"idle"
 delay_in_seconds = "0.0"
 
+[node name="Death" type="Node" parent="StateChart/CompoundState/in air"]
+script = ExtResource("5_xrmxo")
+to = NodePath("../../Die")
+event = &"die"
+delay_in_seconds = "0.0"
+
+[node name="Die" type="Node" parent="StateChart/CompoundState"]
+script = ExtResource("4_qy41k")
+
 [node name="CameraMount" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.612461, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.88382, 7.35489)
 
 [node name="Camera3D" type="Camera3D" parent="CameraMount"]
+transform = Transform3D(1, 0, 0, 0, 0.856582, 0.51601, 0, -0.51601, 0.856582, 0, 0.388861, 0.199267)
 
 [connection signal="state_physics_processing" from="StateChart/CompoundState/idle" to="." method="_on_idle_state_physics_processing"]
 [connection signal="state_physics_processing" from="StateChart/CompoundState/grounded" to="." method="_on_grounded_state_physics_processing"]
 [connection signal="state_physics_processing" from="StateChart/CompoundState/in air" to="." method="_on_in_air_state_physics_processing"]
+[connection signal="state_physics_processing" from="StateChart/CompoundState/Die" to="." method="_on_die_state_physics_processing"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhw5gmoxbo7mc"]
+
+[ext_resource type="Script" path="res://Objects/bomb.gd" id="1_j1mne"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hj7on"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_u74ud"]
+
+[node name="Bomb" type="RigidBody3D"]
+script = ExtResource("1_j1mne")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_hj7on")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_u74ud")
