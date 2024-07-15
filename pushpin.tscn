@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://didi5nibosmj1"]
+
+[ext_resource type="Script" path="res://pushpin.gd" id="1_5q4wf"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5hutk"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_676sg"]
+
+[node name="PushPin" type="AnimatableBody3D"]
+script = ExtResource("1_5q4wf")
+destination = Vector3(0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_5hutk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" groups=["pushpin"]]
+mesh = SubResource("CylinderMesh_676sg")
