@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://boarbfi3lhfxy" path="res://Materials/Bricks1.tres" id="1_6hh77"]
 [ext_resource type="Texture2D" uid="uid://dbgoma8fickm2" path="res://Textures/Dirt/Dirt_03.png" id="2_7ou6c"]
-[ext_resource type="PackedScene" uid="uid://blev2ryfete84" path="res://Tiles/bar_open.tscn" id="3_8hn2t"]
+[ext_resource type="PackedScene" uid="uid://blev2ryfete84" path="res://Tiles/Wedge_open.tscn" id="3_8hn2t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6gds"]
 albedo_texture = ExtResource("2_7ou6c")
