@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://rodciuwnh372"
+path="res://.godot/imported/support-color-four-bottom.obj-d116a730a1dc806fc36ac38debdb4bb3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/support-color-four-bottom.obj-d116a730a1dc806fc36ac38debdb4bb3.mesh"]
+
+source_file="res://Models/Marble/support-color-four-bottom.obj"
+dest_files=["res://.godot/imported/support-color-four-bottom.obj-d116a730a1dc806fc36ac38debdb4bb3.mesh", "res://.godot/imported/support-color-four-bottom.obj-d116a730a1dc806fc36ac38debdb4bb3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

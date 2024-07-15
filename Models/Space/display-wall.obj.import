@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c1wpemv102nle"
+path="res://.godot/imported/display-wall.obj-d2ca127e5cd709c8dd83e5057af6078d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/display-wall.obj-d2ca127e5cd709c8dd83e5057af6078d.mesh"]
+
+source_file="res://Models/Space/display-wall.obj"
+dest_files=["res://.godot/imported/display-wall.obj-d2ca127e5cd709c8dd83e5057af6078d.mesh", "res://.godot/imported/display-wall.obj-d2ca127e5cd709c8dd83e5057af6078d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

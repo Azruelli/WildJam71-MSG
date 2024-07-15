@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://1yi51i5ivxid"
+path="res://.godot/imported/stairs-handrail.obj-f86393ac25f3fba9f5fcd81dc0f9625c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stairs-handrail.obj-f86393ac25f3fba9f5fcd81dc0f9625c.mesh"]
+
+source_file="res://Models/Space/stairs-handrail.obj"
+dest_files=["res://.godot/imported/stairs-handrail.obj-f86393ac25f3fba9f5fcd81dc0f9625c.mesh", "res://.godot/imported/stairs-handrail.obj-f86393ac25f3fba9f5fcd81dc0f9625c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://wesiun11hks5"
+path="res://.godot/imported/wave-solid-a.obj-0f7d10c22a5574bc59e8dd704be6fea0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wave-solid-a.obj-0f7d10c22a5574bc59e8dd704be6fea0.mesh"]
+
+source_file="res://Models/Marble/wave-solid-a.obj"
+dest_files=["res://.godot/imported/wave-solid-a.obj-0f7d10c22a5574bc59e8dd704be6fea0.mesh", "res://.godot/imported/wave-solid-a.obj-0f7d10c22a5574bc59e8dd704be6fea0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

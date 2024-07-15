@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://7s0m7ios6vjf"
+path="res://.godot/imported/ticket-machine.obj-e31ad376fd648c017b35bc2e915943aa.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ticket-machine.obj-e31ad376fd648c017b35bc2e915943aa.mesh"]
+
+source_file="res://Models/Arcade/ticket-machine.obj"
+dest_files=["res://.godot/imported/ticket-machine.obj-e31ad376fd648c017b35bc2e915943aa.mesh", "res://.godot/imported/ticket-machine.obj-e31ad376fd648c017b35bc2e915943aa.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

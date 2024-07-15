@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bqjxsrgj61nse"
+path="res://.godot/imported/funnel.obj-b79ecff3a0e4d2c99e1913be71736b2c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/funnel.obj-b79ecff3a0e4d2c99e1913be71736b2c.mesh"]
+
+source_file="res://Models/Marble/funnel.obj"
+dest_files=["res://.godot/imported/funnel.obj-b79ecff3a0e4d2c99e1913be71736b2c.mesh", "res://.godot/imported/funnel.obj-b79ecff3a0e4d2c99e1913be71736b2c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b8qenoxcgqbc8"]
+[gd_scene load_steps=21 format=3 uid="uid://b8qenoxcgqbc8"]
 
 [ext_resource type="PackedScene" uid="uid://b6kfirnbtp8up" path="res://Tiles/tile_open.tscn" id="1_fs6ii"]
 [ext_resource type="PackedScene" uid="uid://blev2ryfete84" path="res://Tiles/bar_open.tscn" id="2_4dbyl"]
@@ -14,6 +14,20 @@
 [ext_resource type="PackedScene" uid="uid://dlgt7mkioyjrn" path="res://Tiles/tile_lava.tscn" id="12_rmnht"]
 [ext_resource type="PackedScene" uid="uid://bs80u12f63cov" path="res://Tiles/Doodad_Corner_Bumper.tscn" id="13_1s31x"]
 [ext_resource type="PackedScene" uid="uid://bqlgos3f3llcn" path="res://Tiles/tile_loop.tscn" id="14_6lwme"]
+[ext_resource type="PackedScene" uid="uid://cujgge7wvghqu" path="res://Objects/Wheel.tscn" id="15_wuvo8"]
+[ext_resource type="PackedScene" uid="uid://dr45murgyvim4" path="res://Objects/Slots.tscn" id="16_stniq"]
+[ext_resource type="Texture2D" uid="uid://6wh80s463ct5" path="res://Textures/Skybox/1024x512/Gradient Sky/Gradient_Sky-Blue_02-1024x512.png" id="17_ruc2p"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jrf04"]
+panorama = ExtResource("17_ruc2p")
+
+[sub_resource type="Sky" id="Sky_fw6l7"]
+sky_material = SubResource("PanoramaSkyMaterial_jrf04")
+
+[sub_resource type="Environment" id="Environment_h7o6p"]
+background_mode = 2
+sky = SubResource("Sky_fw6l7")
+tonemap_mode = 3
 
 [node name="Stage 1" type="Node3D"]
 
@@ -220,3 +234,16 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 
 [node name="TileOpen23" parent="." instance=ExtResource("14_6lwme")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 0, -70)
+
+[node name="Node3D" parent="." instance=ExtResource("15_wuvo8")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -2.5, 7.5, -17.5)
+
+[node name="Node3D2" parent="." instance=ExtResource("16_stniq")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 1.99612, 7.5, -17.8635)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h7o6p")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.25, 0.433013, -0.5, -0.433013, 0.75, 1.89276e-08, -0.866025, -0.5, 35.5602, 54.5921, -65.3157)
+shadow_enabled = true
