@@ -7,7 +7,7 @@
 albedo_texture = ExtResource("1_opw8m")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k1wrp"]
-size = Vector3(1, 0.773865, 0.510498)
+size = Vector3(0.552979, 0.773865, 0.510498)
 
 [node name="Node3D" type="Node3D"]
 
@@ -16,5 +16,5 @@ material_override = SubResource("StandardMaterial3D_co7ns")
 mesh = ExtResource("2_7oaki")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Gambling-machine"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.363922, 0.0174561)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0355225, 0.363922, 0.0174561)
 shape = SubResource("BoxShape3D_k1wrp")

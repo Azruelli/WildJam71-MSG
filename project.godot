@@ -16,7 +16,7 @@ config/icon="res://icon.svg"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg")
+enabled=PackedStringArray("res://addons/csgtomesh/plugin.cfg", "res://addons/godot_state_charts/plugin.cfg")
 
 [filesystem]
 

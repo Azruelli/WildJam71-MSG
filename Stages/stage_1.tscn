@@ -1,9 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://b8qenoxcgqbc8"]
+[gd_scene load_steps=20 format=3 uid="uid://b8qenoxcgqbc8"]
 
 [ext_resource type="PackedScene" uid="uid://b6kfirnbtp8up" path="res://Tiles/tile_open.tscn" id="1_fs6ii"]
-[ext_resource type="PackedScene" uid="uid://blev2ryfete84" path="res://Tiles/bar_open.tscn" id="2_4dbyl"]
+[ext_resource type="PackedScene" uid="uid://blev2ryfete84" path="res://Tiles/Wedge_open.tscn" id="2_4dbyl"]
 [ext_resource type="PackedScene" uid="uid://c1rnaf1cif6t8" path="res://Tiles/tile_jump.tscn" id="3_pnnr5"]
-[ext_resource type="PackedScene" uid="uid://cibgldjsbqsdl" path="res://Tiles/bar_wall.tscn" id="4_sepfg"]
+[ext_resource type="PackedScene" uid="uid://cibgldjsbqsdl" path="res://Tiles/Wedge_wall.tscn" id="4_sepfg"]
 [ext_resource type="PackedScene" uid="uid://c245gqpcu1kf2" path="res://Tiles/tile_wall.tscn" id="5_6tyd8"]
 [ext_resource type="PackedScene" uid="uid://dkjdybo5k8thp" path="res://player.tscn" id="6_x1auc"]
 [ext_resource type="PackedScene" uid="uid://cmf467rx3fhva" path="res://Tiles/tile_tube_L.tscn" id="7_b4hta"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://bkmju0a02jjyv" path="res://Tiles/Doodad_Bumper.tscn" id="9_qremt"]
 [ext_resource type="PackedScene" uid="uid://dy7j8b1st03s8" path="res://Tiles/Doodad_Bumper_Pillar.tscn" id="10_ycej3"]
 [ext_resource type="PackedScene" uid="uid://xnrrmckaxkeg" path="res://Tiles/tile_stairs.tscn" id="11_7xpbi"]
-[ext_resource type="PackedScene" uid="uid://dlgt7mkioyjrn" path="res://Tiles/tile_lava.tscn" id="12_rmnht"]
 [ext_resource type="PackedScene" uid="uid://bs80u12f63cov" path="res://Tiles/Doodad_Corner_Bumper.tscn" id="13_1s31x"]
 [ext_resource type="PackedScene" uid="uid://bqlgos3f3llcn" path="res://Tiles/tile_loop.tscn" id="14_6lwme"]
 [ext_resource type="PackedScene" uid="uid://cujgge7wvghqu" path="res://Objects/Wheel.tscn" id="15_wuvo8"]
@@ -91,17 +90,11 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -75, 0
 [node name="TileOpen20" parent="." instance=ExtResource("1_fs6ii")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -75, 0, -45)
 
-[node name="TileOpen21" parent="." instance=ExtResource("1_fs6ii")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -100, 0, -45)
-
 [node name="TileOpen22" parent="." instance=ExtResource("1_fs6ii")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -50, 0, -45)
 
 [node name="TileOpen18" parent="." instance=ExtResource("1_fs6ii")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -75, 0, 5)
-
-[node name="TileOpen19" parent="." instance=ExtResource("1_fs6ii")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -100, 0, 5)
 
 [node name="BarOpen24" parent="." instance=ExtResource("2_4dbyl")]
 transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, -75, 2.5, -7.5)
@@ -119,10 +112,58 @@ transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.3
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91068e-15, -62.5, 2.5, 5)
 
 [node name="TileOpen17" parent="." instance=ExtResource("1_fs6ii")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -100, 0, -20)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -150, 0, -20)
+
+[node name="TileOpen19" parent="." instance=ExtResource("1_fs6ii")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -215, 0, 15)
 
 [node name="BarOpen25" parent="." instance=ExtResource("2_4dbyl")]
-transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, -100, 2.5, -7.5)
+transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, -150, 2.5, -7.5)
+
+[node name="BarOpen40" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, -175, 2.5, -7.50001)
+
+[node name="BarOpen41" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(1.31134e-07, -1, -3.55271e-15, 4.37114e-08, 0, 1, -1, -1.31134e-07, 4.37114e-08, -162.5, 2.5, -20)
+
+[node name="BarOpen42" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(1, 1.74846e-07, -3.55271e-15, 0, 4.37114e-08, 1, 1.74846e-07, -1, 4.37114e-08, -150, 2.5, -32.5)
+
+[node name="BarOpen43" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(1, 1.74846e-07, -3.55271e-15, 0, 4.37114e-08, 1, 1.74846e-07, -1, 4.37114e-08, -175, 2.5, -32.5)
+
+[node name="BarOpen44" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(1.31134e-07, -1, -3.55271e-15, 4.37114e-08, 3.55271e-15, 1, -1, -1.31134e-07, 4.37114e-08, -187.5, 2.5, -20)
+
+[node name="BarOpen51" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(1.31134e-07, -1, -3.55271e-15, 4.37114e-08, 3.55271e-15, 1, -1, -1.31134e-07, 4.37114e-08, -197.5, 2.5, 15)
+
+[node name="BarOpen37" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, -125, 2.5, -7.5)
+
+[node name="BarOpen38" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-4.37114e-08, 1, -3.55271e-15, -4.37114e-08, 0, 1, 1, 4.37114e-08, 4.37114e-08, -137.5, 2.5, 5)
+
+[node name="BarOpen46" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-4.37114e-08, 1, -3.55271e-15, -4.37114e-08, 0, 1, 1, 4.37114e-08, 4.37114e-08, -162.5, 2.5, 5)
+
+[node name="BarOpen47" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-4.37114e-08, 1, -3.55271e-15, -4.37114e-08, 0, 1, 1, 4.37114e-08, 4.37114e-08, -162.5, 2.5, -45)
+
+[node name="BarOpen48" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-4.37114e-08, 1, -3.55271e-15, -4.37114e-08, 0, 1, 1, 4.37114e-08, 4.37114e-08, -137.5, 2.5, -45)
+
+[node name="BarOpen49" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(1, 2.4869e-14, -3.55271e-15, -3.55271e-15, 4.37114e-08, 1, 2.13163e-14, -1, 4.37114e-08, -150, 2.5, -57.5)
+
+[node name="BarOpen50" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(1, 2.4869e-14, -3.55271e-15, -3.55271e-15, 4.37114e-08, 1, 2.13163e-14, -1, 4.37114e-08, -150, 2.5, 17.5)
+
+[node name="BarOpen45" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-4.37114e-08, 1, -3.55271e-15, -4.37114e-08, 0, 1, 1, 4.37114e-08, 4.37114e-08, -112.5, 2.5, -20)
+
+[node name="BarOpen39" parent="." instance=ExtResource("2_4dbyl")]
+transform = Transform3D(-4.37114e-08, 1, -3.55271e-15, -4.37114e-08, 0, 1, 1, 4.37114e-08, 4.37114e-08, -137.5, 2.5, -20)
 
 [node name="BarOpen7" parent="." instance=ExtResource("2_4dbyl")]
 transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 25, 2.5, -32.5)
@@ -137,7 +178,7 @@ transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.7422
 transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, -75, 2.5, -32.5)
 
 [node name="BarOpen31" parent="." instance=ExtResource("2_4dbyl")]
-transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, -100, 2.5, -32.5)
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, -125, 2.5, -32.5)
 
 [node name="BarOpen32" parent="." instance=ExtResource("2_4dbyl")]
 transform = Transform3D(1.31134e-07, 1, 3.55271e-15, -4.37114e-08, 0, 1, 1, -1.31134e-07, 4.37114e-08, -87.5, 2.5, -45)
@@ -223,9 +264,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -45)
 [node name="TileOpen3" parent="." instance=ExtResource("11_7xpbi")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 20, -45)
 
-[node name="TileOpen8" parent="." instance=ExtResource("12_rmnht")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45)
-
 [node name="CSGBox3D" parent="." instance=ExtResource("13_1s31x")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -87.6777, 10, -33.2843)
 
@@ -247,3 +285,6 @@ environment = SubResource("Environment_h7o6p")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866025, -0.25, 0.433013, -0.5, -0.433013, 0.75, 1.89276e-08, -0.866025, -0.5, 35.5602, 54.5921, -65.3157)
 shadow_enabled = true
+
+[node name="TileOpen8" parent="." instance=ExtResource("1_fs6ii")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45)

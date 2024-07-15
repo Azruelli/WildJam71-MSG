@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://dmt3idhvu8qhb"]
+
+[ext_resource type="PackedScene" uid="uid://dkjdybo5k8thp" path="res://player.tscn" id="1_r486m"]
+[ext_resource type="PackedScene" uid="uid://dhw5gmoxbo7mc" path="res://Objects/bomb.tscn" id="2_7cel1"]
+[ext_resource type="PackedScene" uid="uid://btnxuox2xtxaw" path="res://comedy_box.tscn" id="3_wls36"]
+[ext_resource type="PackedScene" uid="uid://didi5nibosmj1" path="res://pushpin.tscn" id="4_pqfbk"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oudt6"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_iqt8c"]
+sky_material = SubResource("ProceduralSkyMaterial_oudt6")
+
+[sub_resource type="Environment" id="Environment_bchjf"]
+background_mode = 2
+sky = SubResource("Sky_iqt8c")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bchjf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(30, 0, 0, 0, 0.1, 0, 0, 0, 30, 0, 0, 0)
+use_collision = true
+
+[node name="Player" parent="." instance=ExtResource("1_r486m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02308, 8.23492)
+
+[node name="Bomb" parent="." instance=ExtResource("2_7cel1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.79895, 2.95582, -12.2064)
+
+[node name="Bomba" parent="." instance=ExtResource("2_7cel1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.336447, 1.18896, -1.21872)
+
+[node name="comedy box" parent="." groups=["phys_react"] instance=ExtResource("3_wls36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2174, 0.74023, 0)
+mass = 2.0
+
+[node name="PushPin" parent="." instance=ExtResource("4_pqfbk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.59711, 1.07403, -12.2301)

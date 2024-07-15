@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Player
 
-var health = 100
+var health = 3
 
 #Onready Variables
 @onready var state_chart: StateChart = $StateChart
@@ -28,8 +28,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	handle_state()
 	debugcommands()
-	#handle_camera_rotation()
+	handle_camera_rotation()
 	deltaSuper = get_physics_process_delta_time()
+	print(health)
 
 func walking() -> void:
 	var input_dir := Input.get_vector("Left","Right","Forward","Backward")
@@ -40,6 +41,11 @@ func walking() -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, player_speed * deltaSuper)
 		velocity.z = move_toward(velocity.z, 0, player_speed * deltaSuper)
+		
+		
+
+func take_damage(attack: Attack):
+	pass
 
 func debugcommands() -> void:
 	if Input.is_action_just_pressed("ui_end"):
@@ -65,6 +71,7 @@ func handle_state() -> void:
 		state_chart.send_event("ground")
 	if not is_on_floor():
 		state_chart.send_event("air")
+
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -94,3 +101,7 @@ func _on_idle_state_physics_processing(delta: float) -> void:
 
 func _on_die_state_physics_processing(delta: float) -> void:
 	falling()
+
+
+func _on_bomb_bomb_damage() -> void:
+	health = health - 1
