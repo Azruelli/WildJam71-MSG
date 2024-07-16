@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyo5br4klkx5p"]
+
+[ext_resource type="PackedScene" uid="uid://qots3e6f7c3e" path="res://Models/fbx export/bomwiz.glb" id="1_mfi6w"]
+[ext_resource type="Texture2D" uid="uid://crr66fcp1ggiu" path="res://Models/fbx export/defusalwiz flat.png" id="2_8lbkq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6e1kt"]
+albedo_texture = ExtResource("2_8lbkq")
+
+[node name="bomwiz" instance=ExtResource("1_mfi6w")]
+
+[node name="Skeleton3D" parent="defusalwizarma" index="0"]
+bones/1/position = Vector3(0, 1.35634, -0.0689696)
+bones/1/rotation = Quaternion(0.0541013, 0.107732, -0.00587135, 0.992689)
+bones/2/rotation = Quaternion(-0.0269874, -0.100684, 0.00825057, 0.994518)
+bones/5/rotation = Quaternion(-1.10986e-07, -5.76012e-08, 0.707107, 0.707107)
+bones/6/rotation = Quaternion(-0.5, 0.5, 0.5, 0.5)
+bones/9/rotation = Quaternion(5.76012e-08, -1.10986e-07, -0.707107, 0.707107)
+bones/10/rotation = Quaternion(0.5, 0.5, 0.5, -0.5)
+bones/13/rotation = Quaternion(0.5, 0.5, 0.5, -0.5)
+bones/17/rotation = Quaternion(0.707464, -0.200619, -0.659924, 0.154099)
+bones/18/rotation = Quaternion(-0.00636752, 0.0343875, -0.265412, 0.963501)
+bones/19/rotation = Quaternion(-0.0191904, 0.0355461, 0.0661733, 0.99699)
+bones/20/rotation = Quaternion(0.678774, 0.0539714, 0.730426, 0.0531986)
+bones/21/rotation = Quaternion(0.0215716, 0.034487, 0.270902, 0.961747)
+bones/22/rotation = Quaternion(-0.00372632, 0.0350843, -0.251068, 0.967326)
+bones/23/position = Vector3(-0.426783, 0, 0.338832)
+bones/24/position = Vector3(0.426783, 0, -0.355908)
+
+[node name="defusalwizmesh" parent="defusalwizarma/Skeleton3D" index="0"]
+material_override = SubResource("StandardMaterial3D_6e1kt")

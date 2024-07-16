@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b8qenoxcgqbc8"]
+[gd_scene load_steps=21 format=3 uid="uid://b8qenoxcgqbc8"]
 
 [ext_resource type="PackedScene" uid="uid://b6kfirnbtp8up" path="res://Tiles/tile_open.tscn" id="1_fs6ii"]
 [ext_resource type="PackedScene" uid="uid://blev2ryfete84" path="res://Tiles/Wedge_open.tscn" id="2_4dbyl"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bqlgos3f3llcn" path="res://Tiles/tile_loop.tscn" id="14_6lwme"]
 [ext_resource type="PackedScene" uid="uid://cujgge7wvghqu" path="res://Objects/Wheel.tscn" id="15_wuvo8"]
 [ext_resource type="PackedScene" uid="uid://dr45murgyvim4" path="res://Objects/Slots.tscn" id="16_stniq"]
+[ext_resource type="PackedScene" uid="uid://cyo5br4klkx5p" path="res://bomwiz.tscn" id="17_l6ihe"]
 [ext_resource type="Texture2D" uid="uid://6wh80s463ct5" path="res://Textures/Skybox/1024x512/Gradient Sky/Gradient_Sky-Blue_02-1024x512.png" id="17_ruc2p"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jrf04"]
@@ -288,3 +289,6 @@ shadow_enabled = true
 
 [node name="TileOpen8" parent="." instance=ExtResource("1_fs6ii")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45)
+
+[node name="bomwiz" parent="." instance=ExtResource("17_l6ihe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, -10)
