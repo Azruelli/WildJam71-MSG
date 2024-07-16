@@ -1,12 +1,15 @@
 extends CharacterBody3D
 class_name Player
 
-var health = 3
+var health = 6
 
 #Onready Variables
 @onready var state_chart: StateChart = $StateChart
 @onready var camera_mount: Node3D = $CameraMount
+@onready var bullet: RayCast3D = $RayCast3D
 
+var player = Vector3.ZERO
+var damage = 1
 
 #proj stuff variables that are important to general function
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -43,6 +46,16 @@ func walking() -> void:
 		velocity.z = move_toward(velocity.z, 0, player_speed * deltaSuper)
 		
 		
+
+func raycast_gun() -> void:
+	if Input.is_action_just_pressed("Shoot"):
+			print("Fired a shot")
+			if bullet.is_colliding():
+				var target = bullet.get_collider()
+				if target.is_in_group("Enemy"):
+					print("shot hit")
+					target.health -= damage
+
 
 func take_damage(attack: Attack):
 	pass
@@ -91,6 +104,7 @@ func handle_camera_rotation() -> void:
 #which allows it to update outside of the main loop
 func _on_grounded_state_physics_processing(delta: float) -> void:
 	walking()
+	jumping()
 
 func _on_in_air_state_physics_processing(delta: float) -> void:
 	falling()
@@ -98,10 +112,28 @@ func _on_in_air_state_physics_processing(delta: float) -> void:
 func _on_idle_state_physics_processing(delta: float) -> void:
 	falling()
 	walking()
+	jumping()
 
 func _on_die_state_physics_processing(delta: float) -> void:
 	falling()
 
 
-func _on_bomb_bomb_damage() -> void:
-	health = health - 1
+#func _on_bomb_bomb_damage() -> void:
+	#health = health - 1
+
+
+#func _on_bomb_bomb_explosion() -> void:
+	#var force_magnitude: float = 30.0
+	#var bombs = get_tree().get_nodes_in_group("bomb")
+	
+	#for bomb in bombs:
+		
+		#var direction = bomb.global_position - self.global_position
+		#var distance = bomb.global_position - self.global_position
+		
+		#if distance < 3:
+			#direction = direction.normalized()
+			
+			#velocity.x = direction.x * force_magnitude
+			#velocity.z = direction.z * force_magnitude
+			#velocity.y = direction.y * force_magnitude

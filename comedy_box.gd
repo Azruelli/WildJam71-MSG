@@ -2,7 +2,10 @@ extends RigidBody3D
 
 var health = 1
 
-func take_damate():
+func _ready() -> void:
+	add_to_group("Enemy")
+
+func take_damage():
 	pass
 
 func _process(delta: float) -> void:
