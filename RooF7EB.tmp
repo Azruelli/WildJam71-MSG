@@ -33,21 +33,22 @@ shadow_enabled = true
 transform = Transform3D(30, 0, 0, 0, 0.1, 0, 0, 0, 30, 0, 0, 0)
 use_collision = true
 
-[node name="Player" parent="." groups=["character"] instance=ExtResource("1_r486m")]
+[node name="Player" parent="." instance=ExtResource("1_r486m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02308, 8.23492)
 
-[node name="Bomb" parent="." groups=["bomb"] instance=ExtResource("2_7cel1")]
+[node name="Bomb" parent="." instance=ExtResource("2_7cel1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.79895, 2.95582, -12.2064)
+explosion_center = Vector3(0, 0, 0)
+explosion_radius = 3.0
+explosion_force = 30.0
 
-[node name="Bomba" parent="." groups=["bomb"] instance=ExtResource("2_7cel1")]
+[node name="Bomba" parent="." instance=ExtResource("2_7cel1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.336447, 1.18896, -1.21872)
+explosion_center = Vector3(0, 0, 0)
+explosion_radius = 3.0
+explosion_force = 30.0
 
 [node name="comedy box" parent="." groups=["phys_react"] instance=ExtResource("3_wls36")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2174, 0.74023, 0)
-mass = 2.0
-script = ExtResource("4_l4cxd")
-
-[node name="comedy box2" parent="." groups=["phys_react"] instance=ExtResource("3_wls36")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2174, 0.74023, 0)
 mass = 2.0
 script = ExtResource("4_l4cxd")
@@ -57,6 +58,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.59711, 1.07403, -12.2301)
 
 [node name="PistonTrap" parent="." instance=ExtResource("5_mapbi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.98441, 14.4094, 0)
-
-[connection signal="BombDamage" from="Bomb" to="Player" method="_on_bomb_bomb_damage"]
-[connection signal="BombExplosion" from="Bomb" to="Player" method="_on_bomb_bomb_explosion"]
