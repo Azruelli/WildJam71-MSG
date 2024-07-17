@@ -1,16 +1,21 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkjdybo5k8thp"]
+[gd_scene load_steps=13 format=3 uid="uid://dkjdybo5k8thp"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_cqb6r"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="2_qiprm"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="3_ak4ds"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="4_qy41k"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="5_xrmxo"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/animation_tree_state.gd" id="6_e20fh"]
 [ext_resource type="Script" path="res://Camera3D.gd" id="6_sal6n"]
+[ext_resource type="Script" path="res://cullcast3D.gd" id="7_bdpth"]
 [ext_resource type="PackedScene" uid="uid://jjudchtg8p10" path="res://playerbombspawner.tscn" id="7_tnkd1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d7e4g"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_tgmr2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_766kq"]
+size = Vector3(0.516312, 1.4032, 1)
 
 [node name="Player" type="CharacterBody3D" groups=["phys_react"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.981519, 0)
@@ -95,19 +100,32 @@ delay_in_seconds = "0.0"
 [node name="Die" type="Node" parent="StateChart/CompoundState"]
 script = ExtResource("4_qy41k")
 
+[node name="AnimationTreeState" type="Node" parent="StateChart/CompoundState"]
+script = ExtResource("6_e20fh")
+
 [node name="CameraMount" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.88382, 7.35489)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.06952, 7.35489)
 
 [node name="Camera3D" type="Camera3D" parent="CameraMount"]
 transform = Transform3D(1, 0, 0, 0, 0.856582, 0.51601, 0, -0.51601, 0.856582, 0, 0.388861, 0.199267)
 top_level = true
 script = ExtResource("6_sal6n")
 
+[node name="cullcast3D" type="RayCast3D" parent="CameraMount/Camera3D"]
+visible = false
+script = ExtResource("7_bdpth")
+
 [node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, 0)
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Kickbox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.299317, -1.1342)
+collision_layer = 2
+collision_mask = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Kickbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0111464, 0.201599, 0)
+shape = SubResource("BoxShape3D_766kq")
 
 [node name="Node3D" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.30479)

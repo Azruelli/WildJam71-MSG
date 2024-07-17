@@ -2,6 +2,7 @@ extends RigidBody3D
 class_name Bomb
 
 @onready var state_chart: StateChart = $StateChart
+@onready var explosionarea: Area3D = $explosionarea
 
 var health = 1
 
@@ -14,9 +15,11 @@ signal BombExplosion
 var distance
 
 func _on_ready():
+	%bomb
 	add_to_group("bomb")
 	var piston = get_node("PistonZone")
 	piston.on_body_entered.connect(body_entered)
+	die()
 	
 
 func _process(delta: float) -> void:
@@ -36,8 +39,6 @@ func explode(explosion_center: Vector3, explosion_radius: float, explosion_force
 				var force_magnitude = (1.0 -(distance / explosion_radius)) * explosion_force
 				
 				entity.apply_impulse(direction * force_magnitude)
-				if entity.has_method("take damage"):
-					entity.health -= 1
 
 func damage_character(explosion_center: Vector3, explosion_radius: float):
 	var damage_able = get_tree().get_nodes_in_group("character")
@@ -51,15 +52,16 @@ func damage_character(explosion_center: Vector3, explosion_radius: float):
 				entity.health -= 1
 
 func damage_environment(explosion_center: Vector3, explosion_radius: float):
-	var damage_able = get_tree().get_nodes_in_group("Enemy")
+	var destructible = get_tree().get_nodes_in_group("Enemy")
 	
-	for entity in damage_able:
-		if entity.is_in_group("Enemy") and entity is GridMap:
+	for entity in destructible:
+		if entity.is_in_group("Enemy"):
 			var direction = entity.global_transform.origin - explosion_center
 			var distance = direction.length()
 			if distance < explosion_radius:
 				
 				entity.health -= 1
+
 
 
 #func explode_character(explosion_center: Vector3):
@@ -93,8 +95,8 @@ func damage_environment(explosion_center: Vector3, explosion_radius: float):
 				
 				
 
-
-
+func take_damage(attack: Attack):
+	health -= attack.bomb_damage
 
 func _on_timer_timeout() -> void:
 	print("timed out")
@@ -103,10 +105,24 @@ func _on_timer_timeout() -> void:
 
 func _on_explode_state_physics_processing(delta: float) -> void:
 	explode(explosion_center, explosion_radius, explosion_force)
-	damage_character(explosion_center, explosion_radius)
+	#damage_character(explosion_center, explosion_radius)
 	#emit_signal("BombExplosion")
 	#emit_signal("BombDamage")
-	queue_free()
+	#queue_free()
+	explodearea()
+
+func explodearea() -> void:
+	if explosionarea.has_overlapping_bodies():
+		var bodies = explosionarea.get_overlapping_bodies()
+		for body in bodies:
+			if body.has_method("take_damage"):
+				body.health -= 1
+				queue_free()
+			else:
+				queue_free()
+	else:
+		queue_free()
+
 
 
 #func _on_push_pin_body_entered(body: Area3D) -> void:

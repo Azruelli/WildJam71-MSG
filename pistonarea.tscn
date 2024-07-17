@@ -10,5 +10,4 @@ transform = Transform3D(3, 0, 0, 0, 15, 0, 0, 0, 3, 0, 15.4366, 0)
 script = ExtResource("1_k0umj")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_0her5")

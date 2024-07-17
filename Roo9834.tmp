@@ -40,9 +40,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02308, 8.23492)
 
 [node name="Bomb" parent="." instance=ExtResource("2_7cel1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.79895, 2.95582, -12.2064)
+explosion_center = null
+explosion_radius = null
+explosion_force = null
 
 [node name="Bomba" parent="." instance=ExtResource("2_7cel1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.336447, 1.18896, -1.21872)
+explosion_center = null
+explosion_radius = null
+explosion_force = null
 
 [node name="comedy box" parent="." groups=["phys_react"] instance=ExtResource("3_wls36")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25099, 0.74023, 0)
