@@ -1,8 +1,9 @@
 extends RigidBody3D
+class_name Bomb
 
 @onready var state_chart: StateChart = $StateChart
 
-
+var health = 1
 
 @export var explosion_center = Vector3.ZERO
 @export var explosion_radius: float = 3.0
@@ -14,6 +15,9 @@ var distance
 
 func _on_ready():
 	add_to_group("bomb")
+	var piston = get_node("PistonZone")
+	piston.on_body_entered.connect(body_entered)
+	
 
 func _process(delta: float) -> void:
 	pass
@@ -32,7 +36,8 @@ func explode(explosion_center: Vector3, explosion_radius: float, explosion_force
 				var force_magnitude = (1.0 -(distance / explosion_radius)) * explosion_force
 				
 				entity.apply_impulse(direction * force_magnitude)
-				
+				if entity.has_method("take damage"):
+					entity.health -= 1
 
 func damage_character(explosion_center: Vector3, explosion_radius: float):
 	var damage_able = get_tree().get_nodes_in_group("character")
@@ -111,3 +116,14 @@ func _on_explode_state_physics_processing(delta: float) -> void:
 		#var launch_direction = body_direction.inverse()
 		#var true_launch_dir = launch_direction.normalized()
 		#self.apply_impulse(true_launch_dir * 300)
+
+func _on_piston_zone_body_entered(body: Node3D) -> void:
+	if body is Bomb:
+		body.health -= 1
+
+func die() -> void:
+	if health <= 0:
+		queue_free()
+
+func _on_lit_state_physics_processing(delta: float) -> void:
+	die()

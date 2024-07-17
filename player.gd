@@ -105,14 +105,17 @@ func handle_camera_rotation() -> void:
 func _on_grounded_state_physics_processing(delta: float) -> void:
 	walking()
 	jumping()
+	raycast_gun()
 
 func _on_in_air_state_physics_processing(delta: float) -> void:
 	falling()
+	raycast_gun()
 
 func _on_idle_state_physics_processing(delta: float) -> void:
 	falling()
 	walking()
 	jumping()
+	raycast_gun()
 
 func _on_die_state_physics_processing(delta: float) -> void:
 	falling()
@@ -137,3 +140,8 @@ func _on_die_state_physics_processing(delta: float) -> void:
 			#velocity.x = direction.x * force_magnitude
 			#velocity.z = direction.z * force_magnitude
 			#velocity.y = direction.y * force_magnitude
+
+
+func _on_piston_zone_body_entered(body: Node3D) -> void:
+	if body is Player:
+		health -= 1
