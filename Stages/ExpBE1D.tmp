@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://tpdw1ujsqd6f"]
+
+[ext_resource type="Script" path="res://Stages/Explosion.gd" id="1_j4fim"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_mcv8d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gjsjl"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.258824)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qldr5"]
+
+[node name="AnimatableBody3D" type="AnimatableBody3D"]
+script = ExtResource("1_j4fim")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_mcv8d")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_gjsjl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_qldr5")

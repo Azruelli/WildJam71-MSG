@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dafgn0e70y16s"
-path="res://.godot/imported/bigpapapickle.jpg-c6a00ee8bd6a83b09141ea0a242bec4f.ctex"
+uid="uid://b7voa4y0h0xu"
+path="res://.godot/imported/mtl_wall01_s.png-5a95a722a62f6d50e04e7e4a1d599e98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Models/pinball bits GLB format/bigpapapickle.jpg"
-dest_files=["res://.godot/imported/bigpapapickle.jpg-c6a00ee8bd6a83b09141ea0a242bec4f.ctex"]
+source_file="res://Textures/mixedsets/metal/mtl_wall01_s.png"
+dest_files=["res://.godot/imported/mtl_wall01_s.png-5a95a722a62f6d50e04e7e4a1d599e98.ctex"]
 
 [params]
 

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://btv1k126sn6l1"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_spvmi"]
+
+[node name="Transparent" type="Sprite3D"]
+texture = SubResource("ImageTexture_spvmi")
