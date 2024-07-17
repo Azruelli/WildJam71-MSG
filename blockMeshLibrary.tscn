@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://barnbur6d6jtg"]
+[gd_scene load_steps=45 format=3 uid="uid://barnbur6d6jtg"]
 
 [ext_resource type="Material" uid="uid://boarbfi3lhfxy" path="res://Materials/Bricks1.tres" id="1_q5271"]
 [ext_resource type="Material" uid="uid://bbfdeyii33wcs" path="res://Materials/Bricks1blue.tres" id="2_iniqp"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bxn7e5v4n2ixw" path="res://Textures/Vegetation/Vegetation (45).png" id="22_7bl84"]
 [ext_resource type="Texture2D" uid="uid://4xg3rjn38xj5" path="res://Textures/Vegetation/Vegetation (42).png" id="23_qeavd"]
 [ext_resource type="Texture2D" uid="uid://1vkglr7xocgl" path="res://Textures/Vegetation/Vegetation (39).png" id="24_abtva"]
+[ext_resource type="Texture2D" uid="uid://cofy0turm2oc1" path="res://Textures/Roof/RoofTexture (86)/RoofTexture (86)_BaseColor.png" id="25_yfjsf"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_5a1in"]
 _surfaces = [{
@@ -146,6 +147,34 @@ albedo_texture = ExtResource("24_abtva")
 uv1_scale = Vector3(0.25, 0.25, 0.25)
 uv1_triplanar = true
 uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajdnp"]
+albedo_texture = ExtResource("25_yfjsf")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ixixx"]
+_surfaces = [{
+"aabb": AABB(0, -2.5, -5, 5, 5.00001, 5.00001),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 0, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 171, 170, 42, 62, 0, 0, 0, 0, 171, 170, 42, 62, 0, 0, 0, 0, 171, 170, 42, 62, 0, 0, 128, 63, 171, 170, 42, 62, 0, 0, 128, 63, 171, 170, 170, 62, 0, 0, 0, 0, 171, 170, 170, 62, 0, 0, 0, 0, 171, 170, 170, 62, 0, 0, 128, 63, 171, 170, 170, 62, 0, 0, 128, 63, 0, 0, 0, 63, 0, 0, 0, 0, 0, 0, 0, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 63),
+"format": 34359742487,
+"index_count": 24,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 5, 0, 6, 0, 3, 0, 7, 0, 8, 0, 9, 0, 9, 0, 10, 0, 7, 0, 11, 0, 12, 0, 13, 0, 13, 0, 14, 0, 11, 0, 15, 0, 16, 0, 17, 0),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 18,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 32, 64, 0, 0, 0, 0, 0, 0, 160, 64, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 160, 192, 0, 0, 0, 0, 0, 0, 32, 64, 0, 0, 160, 192, 0, 0, 0, 0, 0, 0, 32, 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 64, 0, 0, 160, 192, 0, 0, 160, 64, 0, 0, 32, 192, 0, 0, 160, 192, 0, 0, 160, 64, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 160, 64, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 160, 64, 0, 0, 32, 192, 0, 0, 160, 192, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 160, 192, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 32, 192, 0, 0, 160, 192, 0, 0, 160, 64, 0, 0, 32, 192, 0, 0, 160, 192, 0, 0, 0, 0, 0, 0, 32, 64, 0, 0, 160, 192, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 128, 255, 255, 255, 255, 0, 0, 0, 128, 255, 255, 255, 255, 0, 0, 0, 128, 255, 255, 255, 255, 0, 0, 0, 128, 255, 255, 255, 255, 255, 191, 255, 191, 255, 255, 255, 255, 255, 191, 255, 191, 255, 255, 255, 255, 255, 191, 255, 191, 255, 255, 255, 255, 255, 191, 255, 191, 255, 255, 255, 255, 0, 128, 0, 0, 255, 255, 255, 255, 0, 128, 0, 0, 255, 255, 255, 255, 0, 128, 0, 0, 255, 255, 255, 255, 0, 128, 0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 255, 191, 255, 255, 255, 255, 0, 0, 255, 191, 255, 255, 255, 255, 0, 0, 255, 191)
+}]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cj3am"]
+albedo_texture = ExtResource("13_np330")
+uv1_scale = Vector3(0.25, 0.25, 0.25)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_giagp"]
+points = PackedVector3Array(5, 5, 0, 5, 5, 5, 5, 0, 5, 0, 0, 5, 5, 0, 0, 0, 0, 0)
 
 [node name="Blocks" type="Node3D"]
 
@@ -306,3 +335,24 @@ surface_material_override/0 = SubResource("StandardMaterial3D_8jfu4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Dirt7/StaticBody3D"]
 shape = SubResource("BoxShape3D_7gx8l")
+
+[node name="Dirt8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 5)
+mesh = SubResource("ArrayMesh_5a1in")
+surface_material_override/0 = SubResource("StandardMaterial3D_ajdnp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Dirt8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dirt8/StaticBody3D"]
+shape = SubResource("BoxShape3D_7gx8l")
+
+[node name="MeshCSGPolygon3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 12.5, 4.37114e-07, -2.5)
+mesh = SubResource("ArrayMesh_ixixx")
+surface_material_override/0 = SubResource("StandardMaterial3D_cj3am")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshCSGPolygon3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshCSGPolygon3D/StaticBody3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5, -2.5, 0)
+shape = SubResource("ConvexPolygonShape3D_giagp")

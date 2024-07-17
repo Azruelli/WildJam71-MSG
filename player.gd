@@ -91,6 +91,7 @@ func handle_camera_rotation() -> void:
 #which allows it to update outside of the main loop
 func _on_grounded_state_physics_processing(delta: float) -> void:
 	walking()
+	jumping()
 
 func _on_in_air_state_physics_processing(delta: float) -> void:
 	falling()
@@ -105,3 +106,5 @@ func _on_die_state_physics_processing(delta: float) -> void:
 
 func _on_bomb_bomb_damage() -> void:
 	health = health - 1
+
+
