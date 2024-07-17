@@ -6,7 +6,7 @@ class_name Bomb
 var health = 1
 
 @export var explosion_center = Vector3.ZERO
-@export var explosion_radius: float = 3.0
+@export var explosion_radius: float = 7.0
 @export var explosion_force: float = 30.0
 signal BombDamage
 signal BombExplosion
@@ -43,7 +43,7 @@ func damage_character(explosion_center: Vector3, explosion_radius: float):
 	var damage_able = get_tree().get_nodes_in_group("character")
 	
 	for entity in damage_able:
-		if entity.is_in_group("character") and entity is CharacterBody3D:
+		if entity.is_in_group("character"):
 			var direction = entity.global_transform.origin - explosion_center
 			var distance = direction.length()
 			if distance < explosion_radius:
@@ -54,7 +54,7 @@ func damage_environment(explosion_center: Vector3, explosion_radius: float):
 	var damage_able = get_tree().get_nodes_in_group("Enemy")
 	
 	for entity in damage_able:
-		if entity.is_in_group("Enemy") and entity is GridMap:
+		if entity.is_in_group("Enemy"):
 			var direction = entity.global_transform.origin - explosion_center
 			var distance = direction.length()
 			if distance < explosion_radius:
