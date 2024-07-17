@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b8qenoxcgqbc8"]
+[gd_scene load_steps=24 format=3 uid="uid://b8qenoxcgqbc8"]
 
 [ext_resource type="PackedScene" uid="uid://b6kfirnbtp8up" path="res://Tiles/tile_open.tscn" id="1_fs6ii"]
 [ext_resource type="PackedScene" uid="uid://blev2ryfete84" path="res://Tiles/Wedge_open.tscn" id="2_4dbyl"]
@@ -17,6 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://dr45murgyvim4" path="res://Objects/Slots.tscn" id="16_stniq"]
 [ext_resource type="PackedScene" uid="uid://cyo5br4klkx5p" path="res://bomwiz.tscn" id="17_l6ihe"]
 [ext_resource type="Texture2D" uid="uid://6wh80s463ct5" path="res://Textures/Skybox/1024x512/Gradient Sky/Gradient_Sky-Blue_02-1024x512.png" id="17_ruc2p"]
+[ext_resource type="PackedScene" uid="uid://cbxvy48mmp3a3" path="res://piston_trap.tscn" id="18_ca1vp"]
+[ext_resource type="PackedScene" uid="uid://dhw5gmoxbo7mc" path="res://Objects/bomb.tscn" id="19_scila"]
+[ext_resource type="PackedScene" uid="uid://didi5nibosmj1" path="res://pushpin.tscn" id="20_oj85n"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_jrf04"]
 panorama = ExtResource("17_ruc2p")
@@ -233,7 +236,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 5, -45)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 5, -70)
 
 [node name="Player" parent="." instance=ExtResource("6_x1auc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.5, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -5)
 
 [node name="TileOpen7" parent="." instance=ExtResource("7_b4hta")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25, 5, -45)
@@ -292,3 +295,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45)
 
 [node name="bomwiz" parent="." instance=ExtResource("17_l6ihe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2.5, -10)
+
+[node name="PistonTrap" parent="." instance=ExtResource("18_ca1vp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 30, -30)
+
+[node name="Bomb" parent="." instance=ExtResource("19_scila")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 7.5, -12.5)
+collision_layer = 2
+collision_mask = 3
+
+[node name="PushPin" parent="." instance=ExtResource("20_oj85n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 2.5, -15)
