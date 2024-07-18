@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://doq241etbgnb2"]
 
-[ext_resource type="Script" path="res://playerspawner.gd" id="1_284vc"]
+[ext_resource type="Script" path="res://10sbombspawner.gd" id="1_vypoo"]
 
 [node name="Spawner" type="Node3D"]
-script = ExtResource("1_284vc")
+script = ExtResource("1_vypoo")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0

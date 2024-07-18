@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dmt3idhvu8qhb"]
+[gd_scene load_steps=15 format=3 uid="uid://dmt3idhvu8qhb"]
 
 [ext_resource type="PackedScene" uid="uid://dkjdybo5k8thp" path="res://player.tscn" id="1_r486m"]
 [ext_resource type="PackedScene" uid="uid://dhw5gmoxbo7mc" path="res://Objects/bomb.tscn" id="2_7cel1"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cj36a6tt1b70n" path="res://bumper.tscn" id="9_77fgs"]
 [ext_resource type="PackedScene" uid="uid://vkbs1fpnasjk" path="res://spawner.tscn" id="9_vlow8"]
 [ext_resource type="PackedScene" uid="uid://b5bikfx16ggho" path="res://flipperright.tscn" id="10_0fp4y"]
+[ext_resource type="PackedScene" uid="uid://bfc14xrnnbw1i" path="res://longbombspawner20s.tscn" id="11_3yhkc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oudt6"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -67,6 +68,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.271707, -0.328306)
 
 [node name="FlipperRight" parent="." instance=ExtResource("10_0fp4y")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 4.80284, 0.729252, 5.05063)
+
+[node name="Spawner2" parent="." instance=ExtResource("11_3yhkc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.12014, 0)
 
 [connection signal="BombDamage" from="Bomb" to="Player" method="_on_bomb_bomb_damage"]
 [connection signal="BombExplosion" from="Bomb" to="Player" method="_on_bomb_bomb_explosion"]
