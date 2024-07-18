@@ -1,15 +1,26 @@
 extends CharacterBody3D
 class_name Player
 
+signal kicked
+
 var health = 6
 
 #Onready Variables
 @onready var state_chart: StateChart = $StateChart
 @onready var camera_mount: Node3D = $CameraMount
 @onready var bullet: RayCast3D = $RayCast3D
+@onready var kickbox: Area3D = $Kickbox
+@onready var cullcast_3d: RayCast3D = $CameraMount/Camera3D/cullcast3D
+@onready var player: Player = $"."
 
-var player = Vector3.ZERO
+
 var damage = 1
+
+var kickbox_back = Vector3.BACK
+@export var kick_force: float = 7.0 
+
+#var kick_box_back: Vector3.BACK
+#var kick_force: float
 
 #proj stuff variables that are important to general function
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -34,6 +45,8 @@ func _physics_process(delta: float) -> void:
 	handle_camera_rotation()
 	deltaSuper = get_physics_process_delta_time()
 	print(health)
+	cullcast()
+	kick()
 
 func walking() -> void:
 	var input_dir := Input.get_vector("Left","Right","Forward","Backward")
@@ -56,9 +69,16 @@ func raycast_gun() -> void:
 					print("shot hit")
 					target.health -= damage
 
+func kick() -> void:
+	var bodies = kickbox.get_overlapping_bodies()
+	if Input.is_action_just_pressed("Kick"):
+		for bomb in bodies:
+			if bomb.is_in_group("bomb") and bomb is RigidBody3D:
+				var direction = (bomb.global_position - global_position).normalized()
+				bomb.apply_impulse(direction * kick_force)
 
 func take_damage(attack: Attack):
-	pass
+	health -= attack.bomb_damage
 
 func debugcommands() -> void:
 	if Input.is_action_just_pressed("ui_end"):
@@ -85,6 +105,10 @@ func handle_state() -> void:
 	if not is_on_floor():
 		state_chart.send_event("air")
 
+func cullcast() -> void:
+	if cullcast_3d.is_colliding():
+		var cullfield = cullcast_3d.get_collider()
+		print(cullfield)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:

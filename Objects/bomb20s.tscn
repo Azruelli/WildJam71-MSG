@@ -11,6 +11,7 @@
 bounce = 0.3
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_t6iex"]
+radius = 2.3115
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_hj7on"]
 
@@ -20,7 +21,8 @@ albedo_color = Color(0.00184107, 0.00184107, 0.00184107, 1)
 [sub_resource type="SphereMesh" id="SphereMesh_u74ud"]
 material = SubResource("StandardMaterial3D_eqt61")
 
-[node name="Bomb" type="RigidBody3D"]
+[node name="Bomb" type="RigidBody3D" groups=["bomb"]]
+top_level = true
 collision_layer = 2
 collision_mask = 3
 mass = 0.3
@@ -28,9 +30,9 @@ physics_material_override = SubResource("PhysicsMaterial_iulfe")
 gravity_scale = 0.7
 script = ExtResource("1_io5q1")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="explosionarea" type="Area3D" parent="."]
 
-[node name="Explosion" type="CollisionShape3D" parent="Area3D"]
+[node name="Explosion" type="CollisionShape3D" parent="explosionarea"]
 shape = SubResource("SphereShape3D_t6iex")
 
 [node name="bomb_collider" type="CollisionShape3D" parent="." groups=["bomb"]]
@@ -61,15 +63,11 @@ script = ExtResource("4_rvse1")
 [node name="Defused" type="Node" parent="StateChart/CompoundState"]
 script = ExtResource("4_rvse1")
 
-[node name="Delete" type="Node" parent="StateChart/CompoundState"]
-script = ExtResource("4_rvse1")
-
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 20.0
 one_shot = true
 autostart = true
 script = ExtResource("6_wtv14")
-timer_wait_time = 20.0
 
 [connection signal="state_physics_processing" from="StateChart/CompoundState/Lit" to="." method="_on_lit_state_physics_processing"]
 [connection signal="state_physics_processing" from="StateChart/CompoundState/Explode" to="." method="_on_explode_state_physics_processing"]
