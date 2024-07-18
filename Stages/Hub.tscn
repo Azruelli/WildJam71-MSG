@@ -1,0 +1,139 @@
+[gd_scene load_steps=12 format=3 uid="uid://chdb8qcrw6nvb"]
+
+[ext_resource type="Texture2D" uid="uid://b5lujewlai4ig" path="res://Textures/Dirt/Dirt_02.png" id="1_kp34p"]
+[ext_resource type="Texture2D" uid="uid://hp0wt6kg8xkx" path="res://Textures/Vegetation/Vegetation (60).png" id="2_oirhn"]
+[ext_resource type="PackedScene" uid="uid://dkjdybo5k8thp" path="res://player.tscn" id="3_3st1c"]
+[ext_resource type="Texture2D" uid="uid://dslwjxttdbgpv" path="res://Textures/Bricks/Brick_01.png" id="4_jneb1"]
+[ext_resource type="PackedScene" uid="uid://bbps22d61pt20" path="res://Stages/pinwizstatue.tscn" id="5_ug3rh"]
+[ext_resource type="MeshLibrary" uid="uid://d2y6gcw3hpnq4" path="res://TerrainMeshLibrary.tres" id="6_87wm1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iiyg4"]
+albedo_texture = ExtResource("1_kp34p")
+detail_enabled = true
+detail_blend_mode = 1
+detail_albedo = ExtResource("2_oirhn")
+uv1_scale = Vector3(0.05, 0.05, 0.05)
+uv1_triplanar = true
+uv1_world_triplanar = true
+uv2_scale = Vector3(0.25, 0.25, 0.25)
+uv2_triplanar = true
+uv2_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l6v12"]
+transparency = 1
+albedo_color = Color(0, 1, 1, 0.196078)
+uv1_scale = Vector3(-0.09, -0.09, -0.09)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7rw1"]
+albedo_texture = ExtResource("4_jneb1")
+uv1_scale = Vector3(-0.09, -0.09, -0.09)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nt6uh"]
+albedo_texture = ExtResource("4_jneb1")
+uv1_scale = Vector3(-0.105, -0.105, -0.105)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ss7u"]
+albedo_texture = ExtResource("4_jneb1")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+use_collision = true
+size = Vector3(100, 5, 100)
+material = SubResource("StandardMaterial3D_iiyg4")
+
+[node name="Player" parent="." instance=ExtResource("3_3st1c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 40)
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.42061, 0)
+use_collision = true
+radius = 9.19037
+height = 0.240205
+material = SubResource("StandardMaterial3D_l6v12")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+use_collision = true
+radius = 10.0
+height = 5.0
+material = SubResource("StandardMaterial3D_h7rw1")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCylinder3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+operation = 2
+use_collision = true
+radius = 9.19037
+height = 3.62697
+material = SubResource("StandardMaterial3D_h7rw1")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.54612, 0)
+use_collision = true
+radius = 2.62448
+height = 13.0812
+material = SubResource("StandardMaterial3D_h7rw1")
+
+[node name="pinwizstatue" parent="." instance=ExtResource("5_ug3rh")]
+transform = Transform3D(1.6577, 0, 0, 0, 1.95682, 0, 0, 0, 1.87915, -0.951318, 11.9678, 0.483852)
+
+[node name="pinwizmesh" parent="pinwizstatue/pinwiz/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nt6uh")
+surface_material_override/1 = SubResource("StandardMaterial3D_0ss7u")
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 5.29549, 12.5)
+use_collision = true
+radius = 1.62958
+height = 5.85921
+material = SubResource("StandardMaterial3D_h7rw1")
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 5.29549, 12.5)
+use_collision = true
+radius = 1.62958
+height = 5.85921
+material = SubResource("StandardMaterial3D_h7rw1")
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 5.29549, -12.5)
+use_collision = true
+radius = 1.62958
+height = 5.85921
+material = SubResource("StandardMaterial3D_h7rw1")
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 5.29549, -12.5)
+use_collision = true
+radius = 1.62958
+height = 5.85921
+material = SubResource("StandardMaterial3D_h7rw1")
+
+[node name="GridMap" type="GridMap" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 1.03659, 0)
+mesh_library = ExtResource("6_87wm1")
+cell_size = Vector3(0.5, 0.5, 0.5)
+data = {
+"cells": PackedInt32Array(3, 5, 122, 5, 7, 122, 65529, 9, 122, 65534, 11, 122, 65524, 65535, 122, 10, 65533, 122, 8, 5, 122, 2, 7, 121, 8, 2, 121, 65526, 4, 121, 8, 65527, 121, 13, 2, 128, 65532, 5, 655488, 65528, 65530, 128, 6, 65531, 1441920, 4, 3, 655488, 1, 4, 1048704)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="GridMap2" type="GridMap" parent="."]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, -1.28442, 0)
+mesh_library = ExtResource("6_87wm1")
+cell_size = Vector3(0.5, 0.5, 0.5)
+data = {
+"cells": PackedInt32Array(8, 5, 122, 4, 65530, 139, 2, 65529, 139, 65530, 65529, 139, 65533, 65531, 139, 65535, 65529, 139, 0, 65530, 139, 65529, 65531, 139, 65529, 65533, 139, 6, 65529, 139, 6, 65532, 139)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[editable path="pinwizstatue"]

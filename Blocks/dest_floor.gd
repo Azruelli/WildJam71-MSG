@@ -2,8 +2,12 @@ extends StaticBody3D
 
 var health = 1
 
-func die() -> void:
-	if health <= 0:
-		queue_free()
+func _ready() -> void:
+	add_to_group("Enemy")
+
+func take_damage():
+	pass
+
 func _process(delta: float) -> void:
-	die()
+	if health == 0:
+		queue_free()

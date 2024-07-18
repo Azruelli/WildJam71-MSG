@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://u5xnt3fx6b46"]
+[gd_scene load_steps=10 format=3 uid="uid://u5xnt3fx6b46"]
 
 [ext_resource type="Texture2D" uid="uid://c6ah46wqb08ot" path="res://Textures/mixedsets/stone/conc_strange.jpg" id="1_4so1x"]
 [ext_resource type="PackedScene" uid="uid://dkjdybo5k8thp" path="res://player.tscn" id="1_p760e"]
 [ext_resource type="Texture2D" uid="uid://bsc24we1hfytp" path="res://Textures/mixedsets/stone/wall_stone03_c.png" id="2_plis0"]
 [ext_resource type="PackedScene" uid="uid://bwqomvjnb4ta8" path="res://Blocks/dest_floor.tscn" id="4_27w0s"]
-[ext_resource type="PackedScene" uid="uid://tpdw1ujsqd6f" path="res://Stages/Explosion.tscn" id="5_dikuh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eqdsq"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -40,325 +39,1049 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pv8id")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="Player" parent="." instance=ExtResource("1_p760e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 12.5, 2)
+
+[node name="Destructible Floor Room 1" type="Node" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Destructible Floor Room 1"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0)
+use_collision = true
+
+[node name="Dest_Floor" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 62, -1.25, -50)
+
+[node name="Dest_Floor2" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 52, -1.25, -50)
+
+[node name="Dest_Floor3" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 42, -1.25, -50)
+
+[node name="Dest_Floor4" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 62, -1.25, -60)
+
+[node name="Dest_Floor5" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 52, -1.25, -60)
+
+[node name="Dest_Floor6" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 42, -1.25, -60)
+
+[node name="Dest_Floor7" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 62, -1.25, -70)
+
+[node name="Dest_Floor8" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 52, -1.25, -70)
+
+[node name="Dest_Floor9" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 42, -1.25, -70)
+
+[node name="Dest_Floor10" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 62, -1.25, -80)
+
+[node name="Dest_Floor11" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 52, -1.25, -80)
+
+[node name="Dest_Floor12" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 42, -1.25, -80)
+
+[node name="Dest_Floor13" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 62, -1.25, -90)
+
+[node name="Dest_Floor14" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 52, -1.25, -90)
+
+[node name="Dest_Floor15" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 42, -1.25, -90)
+
+[node name="Dest_Floor16" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 62, -1.25, -100)
+
+[node name="Dest_Floor17" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 52, -1.25, -100)
+
+[node name="Dest_Floor18" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 42, -1.25, -100)
+
+[node name="Dest_Floor19" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 62, -1.25, -110)
+
+[node name="Dest_Floor20" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 52, -1.25, -110)
+
+[node name="Dest_Floor21" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 42, -1.25, -110)
+
+[node name="Dest_Floor22" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 62, -1.25, -120)
+
+[node name="Dest_Floor23" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 52, -1.25, -120)
+
+[node name="Dest_Floor24" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 42, -1.25, -120)
+
+[node name="Dest_Floor25" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 92, -1.25, -90)
+
+[node name="Dest_Floor26" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 82, -1.25, -90)
+
+[node name="Dest_Floor27" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 72, -1.25, -90)
+
+[node name="Dest_Floor28" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 92, -1.25, -100)
+
+[node name="Dest_Floor29" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 82, -1.25, -100)
+
+[node name="Dest_Floor30" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 72, -1.25, -100)
+
+[node name="Dest_Floor31" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 92, -1.25, -110)
+
+[node name="Dest_Floor32" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 82, -1.25, -110)
+
+[node name="Dest_Floor33" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 72, -1.25, -110)
+
+[node name="Dest_Floor34" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 92, -1.25, -120)
+
+[node name="Dest_Floor35" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 82, -1.25, -120)
+
+[node name="Dest_Floor36" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 72, -1.25, -120)
+
+[node name="Dest_Floor37" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 92, -1.25, -50)
+
+[node name="Dest_Floor38" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 82, -1.25, -50)
+
+[node name="Dest_Floor39" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 72, -1.25, -50)
+
+[node name="Dest_Floor40" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 92, -1.25, -60)
+
+[node name="Dest_Floor41" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 82, -1.25, -60)
+
+[node name="Dest_Floor42" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 72, -1.25, -60)
+
+[node name="Dest_Floor43" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 92, -1.25, -70)
+
+[node name="Dest_Floor44" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 82, -1.25, -70)
+
+[node name="Dest_Floor45" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 72, -1.25, -70)
+
+[node name="Dest_Floor46" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 92, -1.25, -80)
+
+[node name="Dest_Floor47" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 82, -1.25, -80)
+
+[node name="Dest_Floor48" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 72, -1.25, -80)
+
+[node name="Dest_Floor49" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 32, -1.25, -50)
+
+[node name="Dest_Floor50" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22, -1.25, -50)
+
+[node name="Dest_Floor51" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12, -1.25, -50)
+
+[node name="Dest_Floor52" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 32, -1.25, -60)
+
+[node name="Dest_Floor53" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22, -1.25, -60)
+
+[node name="Dest_Floor54" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12, -1.25, -60)
+
+[node name="Dest_Floor55" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 32, -1.25, -70)
+
+[node name="Dest_Floor56" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22, -1.25, -70)
+
+[node name="Dest_Floor57" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12, -1.25, -70)
+
+[node name="Dest_Floor58" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 32, -1.25, -80)
+
+[node name="Dest_Floor59" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22, -1.25, -80)
+
+[node name="Dest_Floor60" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12, -1.25, -80)
+
+[node name="Dest_Floor61" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 32, -1.25, -90)
+
+[node name="Dest_Floor62" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22, -1.25, -90)
+
+[node name="Dest_Floor63" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12, -1.25, -90)
+
+[node name="Dest_Floor64" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 32, -1.25, -100)
+
+[node name="Dest_Floor65" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22, -1.25, -100)
+
+[node name="Dest_Floor66" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12, -1.25, -100)
+
+[node name="Dest_Floor67" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 32, -1.25, -110)
+
+[node name="Dest_Floor68" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22, -1.25, -110)
+
+[node name="Dest_Floor69" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12, -1.25, -110)
+
+[node name="Dest_Floor70" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 32, -1.25, -120)
+
+[node name="Dest_Floor71" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22, -1.25, -120)
+
+[node name="Dest_Floor72" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12, -1.25, -120)
+
+[node name="Dest_Floor73" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 62, -1.25, -130)
+
+[node name="Dest_Floor74" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 52, -1.25, -130)
+
+[node name="Dest_Floor75" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 42, -1.25, -130)
+
+[node name="Dest_Floor76" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 92, -1.25, -130)
+
+[node name="Dest_Floor77" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 82, -1.25, -130)
+
+[node name="Dest_Floor78" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 72, -1.25, -130)
+
+[node name="Dest_Floor79" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 32, -1.25, -130)
+
+[node name="Dest_Floor80" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22, -1.25, -130)
+
+[node name="Dest_Floor81" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12, -1.25, -130)
+
+[node name="Dest_Floor82" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 67, -1.25, -50)
+
+[node name="Dest_Floor83" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 57, -1.25, -50)
+
+[node name="Dest_Floor84" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 47, -1.25, -50)
+
+[node name="Dest_Floor85" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 67, -1.25, -60)
+
+[node name="Dest_Floor86" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 57, -1.25, -60)
+
+[node name="Dest_Floor87" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 47, -1.25, -60)
+
+[node name="Dest_Floor88" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 67, -1.25, -70)
+
+[node name="Dest_Floor89" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 57, -1.25, -70)
+
+[node name="Dest_Floor90" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 47, -1.25, -70)
+
+[node name="Dest_Floor91" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 67, -1.25, -80)
+
+[node name="Dest_Floor92" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 57, -1.25, -80)
+
+[node name="Dest_Floor93" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 47, -1.25, -80)
+
+[node name="Dest_Floor94" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 67, -1.25, -90)
+
+[node name="Dest_Floor95" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 57, -1.25, -90)
+
+[node name="Dest_Floor96" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 47, -1.25, -90)
+
+[node name="Dest_Floor97" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 67, -1.25, -100)
+
+[node name="Dest_Floor98" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 57, -1.25, -100)
+
+[node name="Dest_Floor99" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 47, -1.25, -100)
+
+[node name="Dest_Floor100" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 67, -1.25, -110)
+
+[node name="Dest_Floor101" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 57, -1.25, -110)
+
+[node name="Dest_Floor102" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 47, -1.25, -110)
+
+[node name="Dest_Floor103" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 67, -1.25, -120)
+
+[node name="Dest_Floor104" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 57, -1.25, -120)
+
+[node name="Dest_Floor105" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 47, -1.25, -120)
+
+[node name="Dest_Floor106" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 97, -1.25, -90)
+
+[node name="Dest_Floor107" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 87, -1.25, -90)
+
+[node name="Dest_Floor108" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 77, -1.25, -90)
+
+[node name="Dest_Floor109" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 97, -1.25, -100)
+
+[node name="Dest_Floor110" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 87, -1.25, -100)
+
+[node name="Dest_Floor111" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 77, -1.25, -100)
+
+[node name="Dest_Floor112" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 97, -1.25, -110)
+
+[node name="Dest_Floor113" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 87, -1.25, -110)
+
+[node name="Dest_Floor114" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 77, -1.25, -110)
+
+[node name="Dest_Floor115" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 97, -1.25, -120)
+
+[node name="Dest_Floor116" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 87, -1.25, -120)
+
+[node name="Dest_Floor117" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 77, -1.25, -120)
+
+[node name="Dest_Floor118" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 97, -1.25, -50)
+
+[node name="Dest_Floor119" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 87, -1.25, -50)
+
+[node name="Dest_Floor120" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 77, -1.25, -50)
+
+[node name="Dest_Floor121" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 97, -1.25, -60)
+
+[node name="Dest_Floor122" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 87, -1.25, -60)
+
+[node name="Dest_Floor123" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 77, -1.25, -60)
+
+[node name="Dest_Floor124" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 97, -1.25, -70)
+
+[node name="Dest_Floor125" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 87, -1.25, -70)
+
+[node name="Dest_Floor126" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 77, -1.25, -70)
+
+[node name="Dest_Floor127" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 97, -1.25, -80)
+
+[node name="Dest_Floor128" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 87, -1.25, -80)
+
+[node name="Dest_Floor129" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 77, -1.25, -80)
+
+[node name="Dest_Floor130" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37, -1.25, -50)
+
+[node name="Dest_Floor131" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 27, -1.25, -50)
+
+[node name="Dest_Floor132" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17, -1.25, -50)
+
+[node name="Dest_Floor133" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37, -1.25, -60)
+
+[node name="Dest_Floor134" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 27, -1.25, -60)
+
+[node name="Dest_Floor135" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17, -1.25, -60)
+
+[node name="Dest_Floor136" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37, -1.25, -70)
+
+[node name="Dest_Floor137" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 27, -1.25, -70)
+
+[node name="Dest_Floor138" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17, -1.25, -70)
+
+[node name="Dest_Floor139" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37, -1.25, -80)
+
+[node name="Dest_Floor140" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 27, -1.25, -80)
+
+[node name="Dest_Floor141" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17, -1.25, -80)
+
+[node name="Dest_Floor142" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37, -1.25, -90)
+
+[node name="Dest_Floor143" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 27, -1.25, -90)
+
+[node name="Dest_Floor144" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17, -1.25, -90)
+
+[node name="Dest_Floor145" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37, -1.25, -100)
+
+[node name="Dest_Floor146" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 27, -1.25, -100)
+
+[node name="Dest_Floor147" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17, -1.25, -100)
+
+[node name="Dest_Floor148" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37, -1.25, -110)
+
+[node name="Dest_Floor149" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 27, -1.25, -110)
+
+[node name="Dest_Floor150" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17, -1.25, -110)
+
+[node name="Dest_Floor151" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37, -1.25, -120)
+
+[node name="Dest_Floor152" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 27, -1.25, -120)
+
+[node name="Dest_Floor153" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17, -1.25, -120)
+
+[node name="Dest_Floor154" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 67, -1.25, -130)
+
+[node name="Dest_Floor155" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 57, -1.25, -130)
+
+[node name="Dest_Floor156" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 47, -1.25, -130)
+
+[node name="Dest_Floor157" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 97, -1.25, -130)
+
+[node name="Dest_Floor158" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 87, -1.25, -130)
+
+[node name="Dest_Floor159" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 77, -1.25, -130)
+
+[node name="Dest_Floor160" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37, -1.25, -130)
+
+[node name="Dest_Floor161" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 27, -1.25, -130)
+
+[node name="Dest_Floor162" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17, -1.25, -130)
+
+[node name="Dest_Floor163" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 67, -1.25, -45)
+
+[node name="Dest_Floor164" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 57, -1.25, -45)
+
+[node name="Dest_Floor165" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 47, -1.25, -45)
+
+[node name="Dest_Floor166" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 67, -1.25, -55)
+
+[node name="Dest_Floor167" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 57, -1.25, -55)
+
+[node name="Dest_Floor168" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 47, -1.25, -55)
+
+[node name="Dest_Floor169" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 67, -1.25, -65)
+
+[node name="Dest_Floor170" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 57, -1.25, -65)
+
+[node name="Dest_Floor171" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 47, -1.25, -65)
+
+[node name="Dest_Floor172" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 67, -1.25, -75)
+
+[node name="Dest_Floor173" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 57, -1.25, -75)
+
+[node name="Dest_Floor174" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 47, -1.25, -75)
+
+[node name="Dest_Floor175" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 67, -1.25, -85)
+
+[node name="Dest_Floor176" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 57, -1.25, -85)
+
+[node name="Dest_Floor177" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 47, -1.25, -85)
+
+[node name="Dest_Floor178" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 67, -1.25, -95)
+
+[node name="Dest_Floor179" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 57, -1.25, -95)
+
+[node name="Dest_Floor180" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 47, -1.25, -95)
+
+[node name="Dest_Floor181" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 67, -1.25, -105)
+
+[node name="Dest_Floor182" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 57, -1.25, -105)
+
+[node name="Dest_Floor183" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 47, -1.25, -105)
+
+[node name="Dest_Floor184" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 67, -1.25, -115)
+
+[node name="Dest_Floor185" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 57, -1.25, -115)
+
+[node name="Dest_Floor186" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 47, -1.25, -115)
+
+[node name="Dest_Floor187" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 97, -1.25, -85)
+
+[node name="Dest_Floor188" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 87, -1.25, -85)
+
+[node name="Dest_Floor189" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 77, -1.25, -85)
+
+[node name="Dest_Floor190" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 97, -1.25, -95)
+
+[node name="Dest_Floor191" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 87, -1.25, -95)
+
+[node name="Dest_Floor192" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 77, -1.25, -95)
+
+[node name="Dest_Floor193" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 97, -1.25, -105)
+
+[node name="Dest_Floor194" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 87, -1.25, -105)
+
+[node name="Dest_Floor195" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 77, -1.25, -105)
+
+[node name="Dest_Floor196" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 97, -1.25, -115)
+
+[node name="Dest_Floor197" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 87, -1.25, -115)
+
+[node name="Dest_Floor198" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 77, -1.25, -115)
+
+[node name="Dest_Floor199" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 97, -1.25, -45)
+
+[node name="Dest_Floor200" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 87, -1.25, -45)
+
+[node name="Dest_Floor201" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 77, -1.25, -45)
+
+[node name="Dest_Floor202" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 97, -1.25, -55)
+
+[node name="Dest_Floor203" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 87, -1.25, -55)
+
+[node name="Dest_Floor204" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 77, -1.25, -55)
+
+[node name="Dest_Floor205" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 97, -1.25, -65)
+
+[node name="Dest_Floor206" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 87, -1.25, -65)
+
+[node name="Dest_Floor207" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 77, -1.25, -65)
+
+[node name="Dest_Floor208" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 97, -1.25, -75)
+
+[node name="Dest_Floor209" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 87, -1.25, -75)
+
+[node name="Dest_Floor210" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 77, -1.25, -75)
+
+[node name="Dest_Floor211" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37, -1.25, -45)
+
+[node name="Dest_Floor212" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 27, -1.25, -45)
+
+[node name="Dest_Floor213" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17, -1.25, -45)
+
+[node name="Dest_Floor214" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37, -1.25, -55)
+
+[node name="Dest_Floor215" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 27, -1.25, -55)
+
+[node name="Dest_Floor216" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17, -1.25, -55)
+
+[node name="Dest_Floor217" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37, -1.25, -65)
+
+[node name="Dest_Floor218" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 27, -1.25, -65)
+
+[node name="Dest_Floor219" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17, -1.25, -65)
+
+[node name="Dest_Floor220" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37, -1.25, -75)
+
+[node name="Dest_Floor221" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 27, -1.25, -75)
+
+[node name="Dest_Floor222" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17, -1.25, -75)
+
+[node name="Dest_Floor223" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37, -1.25, -85)
+
+[node name="Dest_Floor224" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 27, -1.25, -85)
+
+[node name="Dest_Floor225" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17, -1.25, -85)
+
+[node name="Dest_Floor226" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37, -1.25, -95)
+
+[node name="Dest_Floor227" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 27, -1.25, -95)
+
+[node name="Dest_Floor228" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17, -1.25, -95)
+
+[node name="Dest_Floor229" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37, -1.25, -105)
+
+[node name="Dest_Floor230" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 27, -1.25, -105)
+
+[node name="Dest_Floor231" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17, -1.25, -105)
+
+[node name="Dest_Floor232" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37, -1.25, -115)
+
+[node name="Dest_Floor233" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 27, -1.25, -115)
+
+[node name="Dest_Floor234" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17, -1.25, -115)
+
+[node name="Dest_Floor235" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 67, -1.25, -125)
+
+[node name="Dest_Floor236" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 57, -1.25, -125)
+
+[node name="Dest_Floor237" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 47, -1.25, -125)
+
+[node name="Dest_Floor238" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 97, -1.25, -125)
+
+[node name="Dest_Floor239" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 87, -1.25, -125)
+
+[node name="Dest_Floor240" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 77, -1.25, -125)
+
+[node name="Dest_Floor241" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 37, -1.25, -125)
+
+[node name="Dest_Floor242" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 27, -1.25, -125)
+
+[node name="Dest_Floor243" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 17, -1.25, -125)
+
+[node name="Dest_Floor244" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 62, -1.25, -45)
+
+[node name="Dest_Floor245" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 52, -1.25, -45)
+
+[node name="Dest_Floor246" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 42, -1.25, -45)
+
+[node name="Dest_Floor247" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 62, -1.25, -55)
+
+[node name="Dest_Floor248" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 52, -1.25, -55)
+
+[node name="Dest_Floor249" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 42, -1.25, -55)
+
+[node name="Dest_Floor250" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 62, -1.25, -65)
+
+[node name="Dest_Floor251" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 52, -1.25, -65)
+
+[node name="Dest_Floor252" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 42, -1.25, -65)
+
+[node name="Dest_Floor253" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 62, -1.25, -75)
+
+[node name="Dest_Floor254" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 52, -1.25, -75)
+
+[node name="Dest_Floor255" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 42, -1.25, -75)
+
+[node name="Dest_Floor256" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 62, -1.25, -85)
+
+[node name="Dest_Floor257" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 52, -1.25, -85)
+
+[node name="Dest_Floor258" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 42, -1.25, -85)
+
+[node name="Dest_Floor259" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 62, -1.25, -95)
+
+[node name="Dest_Floor260" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 52, -1.25, -95)
+
+[node name="Dest_Floor261" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 42, -1.25, -95)
+
+[node name="Dest_Floor262" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 62, -1.25, -105)
+
+[node name="Dest_Floor263" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 52, -1.25, -105)
+
+[node name="Dest_Floor264" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 42, -1.25, -105)
+
+[node name="Dest_Floor265" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 62, -1.25, -115)
+
+[node name="Dest_Floor266" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 52, -1.25, -115)
+
+[node name="Dest_Floor267" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 42, -1.25, -115)
+
+[node name="Dest_Floor268" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 92, -1.25, -85)
+
+[node name="Dest_Floor269" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 82, -1.25, -85)
+
+[node name="Dest_Floor270" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 72, -1.25, -85)
+
+[node name="Dest_Floor271" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 92, -1.25, -95)
+
+[node name="Dest_Floor272" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 82, -1.25, -95)
+
+[node name="Dest_Floor273" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 72, -1.25, -95)
+
+[node name="Dest_Floor274" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 92, -1.25, -105)
+
+[node name="Dest_Floor275" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 82, -1.25, -105)
+
+[node name="Dest_Floor276" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 72, -1.25, -105)
+
+[node name="Dest_Floor277" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 92, -1.25, -115)
+
+[node name="Dest_Floor278" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 82, -1.25, -115)
+
+[node name="Dest_Floor279" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 72, -1.25, -115)
+
+[node name="Dest_Floor280" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 92, -1.25, -45)
+
+[node name="Dest_Floor281" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 82, -1.25, -45)
+
+[node name="Dest_Floor282" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 72, -1.25, -45)
+
+[node name="Dest_Floor283" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 92, -1.25, -55)
+
+[node name="Dest_Floor284" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 82, -1.25, -55)
+
+[node name="Dest_Floor285" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 72, -1.25, -55)
+
+[node name="Dest_Floor286" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 92, -1.25, -65)
+
+[node name="Dest_Floor287" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 82, -1.25, -65)
+
+[node name="Dest_Floor288" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 72, -1.25, -65)
+
+[node name="Dest_Floor289" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 92, -1.25, -75)
+
+[node name="Dest_Floor290" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 82, -1.25, -75)
+
+[node name="Dest_Floor291" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 72, -1.25, -75)
+
+[node name="Dest_Floor292" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 32, -1.25, -45)
+
+[node name="Dest_Floor293" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22, -1.25, -45)
+
+[node name="Dest_Floor294" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12, -1.25, -45)
+
+[node name="Dest_Floor295" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 32, -1.25, -55)
+
+[node name="Dest_Floor296" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22, -1.25, -55)
+
+[node name="Dest_Floor297" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12, -1.25, -55)
+
+[node name="Dest_Floor298" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 32, -1.25, -65)
+
+[node name="Dest_Floor299" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22, -1.25, -65)
+
+[node name="Dest_Floor300" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12, -1.25, -65)
+
+[node name="Dest_Floor301" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 32, -1.25, -75)
+
+[node name="Dest_Floor302" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22, -1.25, -75)
+
+[node name="Dest_Floor303" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12, -1.25, -75)
+
+[node name="Dest_Floor304" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 32, -1.25, -85)
+
+[node name="Dest_Floor305" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22, -1.25, -85)
+
+[node name="Dest_Floor306" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12, -1.25, -85)
+
+[node name="Dest_Floor307" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 32, -1.25, -95)
+
+[node name="Dest_Floor308" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22, -1.25, -95)
+
+[node name="Dest_Floor309" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12, -1.25, -95)
+
+[node name="Dest_Floor310" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 32, -1.25, -105)
+
+[node name="Dest_Floor311" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22, -1.25, -105)
+
+[node name="Dest_Floor312" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12, -1.25, -105)
+
+[node name="Dest_Floor313" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 32, -1.25, -115)
+
+[node name="Dest_Floor314" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22, -1.25, -115)
+
+[node name="Dest_Floor315" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12, -1.25, -115)
+
+[node name="Dest_Floor316" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 62, -1.25, -125)
+
+[node name="Dest_Floor317" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 52, -1.25, -125)
+
+[node name="Dest_Floor318" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 42, -1.25, -125)
+
+[node name="Dest_Floor319" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 92, -1.25, -125)
+
+[node name="Dest_Floor320" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 82, -1.25, -125)
+
+[node name="Dest_Floor321" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 72, -1.25, -125)
+
+[node name="Dest_Floor322" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 32, -1.25, -125)
+
+[node name="Dest_Floor323" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 22, -1.25, -125)
+
+[node name="Dest_Floor324" parent="Destructible Floor Room 1/CSGBox3D" instance=ExtResource("4_27w0s")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 12, -1.25, -125)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Destructible Floor Room 1/CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -2.5, 0)
 use_collision = true
 size = Vector3(60, 5, 30)
 material = SubResource("StandardMaterial3D_4jbwu")
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+[node name="CSGBox3D4" type="CSGBox3D" parent="Destructible Floor Room 1/CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 12.5, -13.75)
 use_collision = true
 size = Vector3(60, 25, 2.5)
 material = SubResource("StandardMaterial3D_4b4hq")
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+[node name="CSGBox3D8" type="CSGBox3D" parent="Destructible Floor Room 1/CSGBox3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -21.612, 12.5, -0.0811758)
 use_collision = true
 size = Vector3(25.2356, 25, 2.5)
 material = SubResource("StandardMaterial3D_4b4hq")
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+[node name="CSGBox3D5" type="CSGBox3D" parent="Destructible Floor Room 1/CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 12.5, 13.75)
 use_collision = true
 size = Vector3(90, 25, 2.5)
 material = SubResource("StandardMaterial3D_4b4hq")
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+[node name="CSGBox3D6" type="CSGBox3D" parent="Destructible Floor Room 1/CSGBox3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 65.7176, 12.5, -16.2283)
 use_collision = true
 size = Vector3(57.5112, 25, 2.5)
 material = SubResource("StandardMaterial3D_4b4hq")
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+[node name="CSGBox3D9" type="CSGBox3D" parent="Destructible Floor Room 1/CSGBox3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 98.2176, 12.5, -89.9839)
 use_collision = true
 size = Vector3(90, 25, 2.5)
 material = SubResource("StandardMaterial3D_4b4hq")
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.71764, 12.5, -91.2339)
+[node name="CSGBox3D10" type="CSGBox3D" parent="Destructible Floor Room 1/CSGBox3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 10.7176, 12.5, -91.2339)
 use_collision = true
 size = Vector3(87.5, 25, 2.5)
 material = SubResource("StandardMaterial3D_4b4hq")
 
-[node name="CSGBox3D11" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.9676, 12.5, -136.234)
+[node name="CSGBox3D12" type="CSGBox3D" parent="Destructible Floor Room 1/CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.7176, 12.5, -46.2339)
 use_collision = true
-size = Vector3(95, 25, 2.5)
+size = Vector3(29.5, 25, 2.5)
 material = SubResource("StandardMaterial3D_4b4hq")
 
-[node name="CSGBox3D12" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.9676, 12.5, -46.2339)
-use_collision = true
-size = Vector3(35, 25, 2.5)
-material = SubResource("StandardMaterial3D_4b4hq")
-
-[node name="CSGBox3D13" type="CSGBox3D" parent="."]
+[node name="CSGBox3D13" type="CSGBox3D" parent="Destructible Floor Room 1/CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.7176, 12.5, -46.2339)
 use_collision = true
 size = Vector3(32.5, 25, 2.5)
 material = SubResource("StandardMaterial3D_4b4hq")
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+[node name="CSGBox3D7" type="CSGBox3D" parent="Destructible Floor Room 1/CSGBox3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 38.2176, 12.5, -28.7339)
 use_collision = true
 size = Vector3(32.5, 25, 2.5)
 material = SubResource("StandardMaterial3D_4b4hq")
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Destructible Floor Room 1/CSGBox3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 52, -2.5, -15)
 use_collision = true
 size = Vector3(60, 5, 30)
 material = SubResource("StandardMaterial3D_4jbwu")
-
-[node name="Player" parent="." instance=ExtResource("1_p760e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.5, 5, -40.5)
-
-[node name="Destructible Floor Room 1" type="Node" parent="."]
-
-[node name="Dest_Floor" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, -2.5, -50)
-
-[node name="Dest_Floor2" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, -2.5, -50)
-
-[node name="Dest_Floor3" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, -2.5, -50)
-
-[node name="Dest_Floor4" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, -2.5, -60)
-
-[node name="Dest_Floor5" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, -2.5, -60)
-
-[node name="Dest_Floor6" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, -2.5, -60)
-
-[node name="Dest_Floor7" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, -2.5, -70)
-
-[node name="Dest_Floor8" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, -2.5, -70)
-
-[node name="Dest_Floor9" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, -2.5, -70)
-
-[node name="Dest_Floor10" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, -2.5, -80)
-
-[node name="Dest_Floor11" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, -2.5, -80)
-
-[node name="Dest_Floor12" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, -2.5, -80)
-
-[node name="Dest_Floor13" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, -2.5, -90)
-
-[node name="Dest_Floor14" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, -2.5, -90)
-
-[node name="Dest_Floor15" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, -2.5, -90)
-
-[node name="Dest_Floor16" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, -2.5, -100)
-
-[node name="Dest_Floor17" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, -2.5, -100)
-
-[node name="Dest_Floor18" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, -2.5, -100)
-
-[node name="Dest_Floor19" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, -2.5, -110)
-
-[node name="Dest_Floor20" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, -2.5, -110)
-
-[node name="Dest_Floor21" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, -2.5, -110)
-
-[node name="Dest_Floor22" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, -2.5, -120)
-
-[node name="Dest_Floor23" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, -2.5, -120)
-
-[node name="Dest_Floor24" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, -2.5, -120)
-
-[node name="Dest_Floor25" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92, -2.5, -90)
-
-[node name="Dest_Floor26" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, -2.5, -90)
-
-[node name="Dest_Floor27" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, -2.5, -90)
-
-[node name="Dest_Floor28" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92, -2.5, -100)
-
-[node name="Dest_Floor29" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, -2.5, -100)
-
-[node name="Dest_Floor30" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, -2.5, -100)
-
-[node name="Dest_Floor31" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92, -2.5, -110)
-
-[node name="Dest_Floor32" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, -2.5, -110)
-
-[node name="Dest_Floor33" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, -2.5, -110)
-
-[node name="Dest_Floor34" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92, -2.5, -120)
-
-[node name="Dest_Floor35" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, -2.5, -120)
-
-[node name="Dest_Floor36" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, -2.5, -120)
-
-[node name="Dest_Floor37" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92, -2.5, -50)
-
-[node name="Dest_Floor38" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, -2.5, -50)
-
-[node name="Dest_Floor39" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, -2.5, -50)
-
-[node name="Dest_Floor40" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92, -2.5, -60)
-
-[node name="Dest_Floor41" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, -2.5, -60)
-
-[node name="Dest_Floor42" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, -2.5, -60)
-
-[node name="Dest_Floor43" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92, -2.5, -70)
-
-[node name="Dest_Floor44" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, -2.5, -70)
-
-[node name="Dest_Floor45" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, -2.5, -70)
-
-[node name="Dest_Floor46" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92, -2.5, -80)
-
-[node name="Dest_Floor47" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, -2.5, -80)
-
-[node name="Dest_Floor48" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, -2.5, -80)
-
-[node name="Dest_Floor49" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -2.5, -50)
-
-[node name="Dest_Floor50" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -2.5, -50)
-
-[node name="Dest_Floor51" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -2.5, -50)
-
-[node name="Dest_Floor52" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -2.5, -60)
-
-[node name="Dest_Floor53" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -2.5, -60)
-
-[node name="Dest_Floor54" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -2.5, -60)
-
-[node name="Dest_Floor55" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -2.5, -70)
-
-[node name="Dest_Floor56" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -2.5, -70)
-
-[node name="Dest_Floor57" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -2.5, -70)
-
-[node name="Dest_Floor58" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -2.5, -80)
-
-[node name="Dest_Floor59" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -2.5, -80)
-
-[node name="Dest_Floor60" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -2.5, -80)
-
-[node name="Dest_Floor61" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -2.5, -90)
-
-[node name="Dest_Floor62" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -2.5, -90)
-
-[node name="Dest_Floor63" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -2.5, -90)
-
-[node name="Dest_Floor64" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -2.5, -100)
-
-[node name="Dest_Floor65" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -2.5, -100)
-
-[node name="Dest_Floor66" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -2.5, -100)
-
-[node name="Dest_Floor67" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -2.5, -110)
-
-[node name="Dest_Floor68" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -2.5, -110)
-
-[node name="Dest_Floor69" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -2.5, -110)
-
-[node name="Dest_Floor70" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -2.5, -120)
-
-[node name="Dest_Floor71" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -2.5, -120)
-
-[node name="Dest_Floor72" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -2.5, -120)
-
-[node name="Dest_Floor73" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, -2.5, -130)
-
-[node name="Dest_Floor74" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, -2.5, -130)
-
-[node name="Dest_Floor75" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, -2.5, -130)
-
-[node name="Dest_Floor76" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92, -2.5, -130)
-
-[node name="Dest_Floor77" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, -2.5, -130)
-
-[node name="Dest_Floor78" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, -2.5, -130)
-
-[node name="Dest_Floor79" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, -2.5, -130)
-
-[node name="Dest_Floor80" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, -2.5, -130)
-
-[node name="Dest_Floor81" parent="Destructible Floor Room 1" instance=ExtResource("4_27w0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -2.5, -130)
-
-[node name="AnimatableBody3D" parent="." instance=ExtResource("5_dikuh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 3.5, -50)
