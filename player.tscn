@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dkjdybo5k8thp"]
+[gd_scene load_steps=14 format=3 uid="uid://dkjdybo5k8thp"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_cqb6r"]
 [ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="2_qiprm"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Camera3D.gd" id="6_sal6n"]
 [ext_resource type="Script" path="res://cullcast3D.gd" id="7_bdpth"]
 [ext_resource type="PackedScene" uid="uid://jjudchtg8p10" path="res://playerbombspawner.tscn" id="7_tnkd1"]
+[ext_resource type="PackedScene" uid="uid://b7iosdxecrtso" path="res://bomb_defusal_minigame.tscn" id="9_yw8lw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_d7e4g"]
 
@@ -114,6 +115,8 @@ script = ExtResource("6_sal6n")
 [node name="cullcast3D" type="RayCast3D" parent="CameraMount/Camera3D"]
 visible = false
 script = ExtResource("7_bdpth")
+
+[node name="Control" parent="CameraMount/Camera3D" instance=ExtResource("9_yw8lw")]
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 target_position = Vector3(0, 0, 0)

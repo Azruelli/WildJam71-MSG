@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2sf45hyi7y5h"
-path="res://.godot/imported/painpole unpammed.png-49ffad69ac57ed17d7543ea30aadee47.ctex"
+uid="uid://c3sbf8g7bp1pw"
+path="res://.godot/imported/wirecutterframeone.png-fb43ffb12b89e5d9c6ac03dc9450d089.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Models/pinball bits GLB format/painpole unpammed.png"
-dest_files=["res://.godot/imported/painpole unpammed.png-49ffad69ac57ed17d7543ea30aadee47.ctex"]
+source_file="res://sprites/wirecutterframeone.png"
+dest_files=["res://.godot/imported/wirecutterframeone.png-fb43ffb12b89e5d9c6ac03dc9450d089.ctex"]
 
 [params]
 

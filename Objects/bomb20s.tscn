@@ -27,7 +27,7 @@ collision_layer = 2
 collision_mask = 3
 mass = 0.3
 physics_material_override = SubResource("PhysicsMaterial_iulfe")
-gravity_scale = 0.7
+gravity_scale = 1.5
 script = ExtResource("1_io5q1")
 
 [node name="explosionarea" type="Area3D" parent="."]
