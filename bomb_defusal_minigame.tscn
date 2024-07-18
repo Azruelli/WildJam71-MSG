@@ -1,3 +1,100 @@
-[gd_scene format=3 uid="uid://b7iosdxecrtso"]
+[gd_scene load_steps=12 format=3 uid="uid://b7iosdxecrtso"]
 
-[node name="bomb defusal minigame" type="Area2D"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="1_2y8h0"]
+[ext_resource type="Script" path="res://bomb_defusal_minigame.gd" id="1_kehjl"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/compound_state.gd" id="2_8d823"]
+[ext_resource type="Texture2D" uid="uid://c3sbf8g7bp1pw" path="res://sprites/wirecutterframeone.png" id="2_f68ra"]
+[ext_resource type="Texture2D" uid="uid://cvdyue2txvvr" path="res://sprites/wirecutterframetwo.png" id="3_cyvvh"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/atomic_state.gd" id="3_s6fx5"]
+[ext_resource type="Script" path="res://addons/godot_state_charts/transition.gd" id="4_qgm3l"]
+[ext_resource type="Script" path="res://wirecutter.gd" id="6_ugrpn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hog84"]
+size = Vector2(102.5, 245)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25hts"]
+size = Vector2(229, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u4ppa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f68ra")
+}],
+"loop": true,
+"name": &"Open",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cyvvh")
+}],
+"loop": true,
+"name": &"Snip",
+"speed": 1.0
+}]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Minigame" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bomb defusal minigame" type="Area2D" parent="Minigame"]
+script = ExtResource("1_kehjl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Minigame/bomb defusal minigame"]
+position = Vector2(504, 296)
+shape = SubResource("RectangleShape2D_hog84")
+
+[node name="Sprite2D" type="Sprite2D" parent="Minigame/bomb defusal minigame/CollisionShape2D"]
+
+[node name="StateChart" type="Node" parent="Minigame/bomb defusal minigame"]
+script = ExtResource("1_2y8h0")
+
+[node name="CompoundState" type="Node" parent="Minigame/bomb defusal minigame/StateChart"]
+script = ExtResource("2_8d823")
+initial_state = NodePath("Inactive")
+
+[node name="Inactive" type="Node" parent="Minigame/bomb defusal minigame/StateChart/CompoundState"]
+script = ExtResource("3_s6fx5")
+
+[node name="ToActive" type="Node" parent="Minigame/bomb defusal minigame/StateChart/CompoundState/Inactive"]
+script = ExtResource("4_qgm3l")
+delay_in_seconds = "0.0"
+
+[node name="Active" type="Node" parent="Minigame/bomb defusal minigame/StateChart/CompoundState"]
+script = ExtResource("3_s6fx5")
+
+[node name="ToDefuse" type="Node" parent="Minigame/bomb defusal minigame/StateChart/CompoundState/Active"]
+script = ExtResource("4_qgm3l")
+delay_in_seconds = "0.0"
+
+[node name="DefuseCheck" type="Node" parent="Minigame/bomb defusal minigame/StateChart/CompoundState"]
+script = ExtResource("3_s6fx5")
+
+[node name="ToInactive" type="Node" parent="Minigame/bomb defusal minigame/StateChart/CompoundState/DefuseCheck"]
+script = ExtResource("4_qgm3l")
+delay_in_seconds = "0.0"
+
+[node name="wirecutter" type="Area2D" parent="Minigame"]
+script = ExtResource("6_ugrpn")
+destination = Vector2(0, 170)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Minigame/wirecutter"]
+position = Vector2(621.5, 48)
+shape = SubResource("RectangleShape2D_25hts")
+
+[node name="WirecutterAnim" type="AnimatedSprite2D" parent="Minigame/wirecutter"]
+position = Vector2(944, 40)
+scale = Vector2(0.649166, 0.649166)
+sprite_frames = SubResource("SpriteFrames_u4ppa")
+animation = &"Snip"
