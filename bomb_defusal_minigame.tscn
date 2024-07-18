@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://b7iosdxecrtso"]
+
+[node name="bomb defusal minigame" type="Area2D"]

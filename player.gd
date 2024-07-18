@@ -3,7 +3,7 @@ class_name Player
 
 signal kicked
 
-var health = 6
+var health = 3
 
 #Onready Variables
 @onready var state_chart: StateChart = $StateChart

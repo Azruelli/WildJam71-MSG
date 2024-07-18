@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5bikfx16ggho"]
+
+[ext_resource type="PackedScene" uid="uid://bs2u2oxjtu6c0" path="res://Models/pinball bits GLB format/flipper.glb" id="1_67h15"]
+[ext_resource type="Script" path="res://flipper.gd" id="1_q84gp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4iant"]
+size = Vector3(2.64331, 0.514526, 1.22021)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_28bmh"]
+
+[node name="FlipperRight" type="Area3D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_q84gp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0370383, -0.242737, -0.110107)
+shape = SubResource("BoxShape3D_4iant")
+
+[node name="flipper2" parent="." instance=ExtResource("1_67h15")]
+transform = Transform3D(0.275746, 0, 0.0486215, 0, 0.28, 0, -0.0486215, 0, 0.275746, 0.801046, -0.318343, -0.104532)
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="flipper2"]
+transform = Transform3D(3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, -3.30117, 0, -0.558429)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="flipper2/AnimatableBody3D"]
+transform = Transform3D(2.5, 0, 0, 0, -4.37114e-08, 0.4, 0, -1, -1.74846e-08, 0, -0.245327, 0.0238513)
+shape = SubResource("ConvexPolygonShape3D_28bmh")
